@@ -2,9 +2,6 @@
 .Rhistory
 .Rapp.history
 
-# Session Data files
-.RData
-
 # User-specific files
 .Ruserdata
 
