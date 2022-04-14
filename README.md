@@ -8,7 +8,7 @@ Robert Smith<sup>1,2,3</sup>,  Paul Schneider<sup>2,3</sup> & Praveen Thokala<su
 <sup>2</sup> [University of Sheffield](https://www.sheffield.ac.uk/scharr), University of Sheffield, Sheffield, UK; 
 <sup>3</sup> [Dark Peak Analytics](https://darkpeakanalytics.com/), Sheffield, UK;
 
-### **Background**
+#### **Background**
 
 The process of updating economic models is time-consuming and expensive, and often involves the transfer of sensitive data between parties.
 However, recent advances in data and computing sciences can be combined with script based health economic models to provide living health economic analysis, that is, analysis
@@ -17,7 +17,7 @@ Allowing clients to retain control of their data, while automating much of the h
 The following describes a simple worked example of an automated health economic evaluation which is run monthly, or as new data emerges.
 
 
-### **Methods**
+#### **Methods**
 
 The materials demonstrate how economic models can be separated from any sensitive data on which they rely, allowing for companies to retain control of their data at all times and allowing models to be automatically updated as new data becomes available. There are three parts to achieving this:
 - An API, generated using the R package [plumber](https://www.rplumber.io/?msclkid=b4faa783bbfc11ec93ded7f5b4523880/) is hosted on a client server (on RStudio Connect). This API hosts all sensitive data, so that data does not have to be provided to the consultant. 
@@ -28,14 +28,14 @@ A diagram of the method is shown below.
 
 **< INSERT DIAGRAM HERE >**
 
-### **Results & Discussion**
+#### **Results & Discussion**
 
 The method is relatively complex, and would require a strong understanding of R, APIs, RMarkdown and GitHub Actions.
 However, the end result is a process by which a client never needs to release their sensitive data to a consultant, reducing concerns about data-security.
 The entire process is automated, such that it can be triggered by a client if data is provided ad-hoc, or run on a schedule if data is continually updated.
 As far as we are aware this is the first application of this process anywhere for a HEOR project.
 
-### **Conclusions**
+#### **Conclusions**
 
 This example demonstrates that it is possible to separate an algorithm (a code base for a health economic model) from the data used by the model. 
 By using new open source tools data never left the client's server, yet analysis was undertaken and updated when necessary as new data was input by the client.
