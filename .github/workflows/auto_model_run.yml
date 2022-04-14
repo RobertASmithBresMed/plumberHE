@@ -30,6 +30,7 @@ jobs:
     - name: Install dependencies
       run: |
           install.packages(c("reshape2","jsonlite", "httr", "readr", "rmarkdown", "markdown"))
+          install.packages("scales", dependencies = TRUE, repos = 'http://cran.rstudio.com/' )
           install.packages("ggplot2", dependencies = TRUE, repos = 'http://cran.rstudio.com/')
       shell: Rscript {0} 
 
