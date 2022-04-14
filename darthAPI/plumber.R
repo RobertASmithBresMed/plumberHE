@@ -45,6 +45,7 @@ function(path_to_psa_inputs = "parameter_distributions.csv",
   results <- run_model(psa_inputs)
   
   # check that the model results being returned are the correct dimensions & type
+  # here we expect a single dataframe with 6 columns and 1000 rows
   assertthat::assert_that(
     all(dim(x = results) == c(1000, 6)),
     class(results) == "data.frame",
@@ -54,10 +55,11 @@ function(path_to_psa_inputs = "parameter_distributions.csv",
   )
   
   # check that no data matching the sensitive csv data is included in the output
-  # searches through the results data-frame for any of the parameter names
-  all(psa_inputs[, 1] %in%
+  # searches through the results data-frame for any of the parameter names,
+  # if any exist they will flag a TRUE, therefore we assert that all = F
+  assertthat::assert_that(all(psa_inputs[, 1] %in%
         as.character(unlist(x = results,
-                            recursive = T)))
+                            recursive = T)) == F))
   
   return(results)
   

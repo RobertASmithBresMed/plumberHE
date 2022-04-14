@@ -74,6 +74,37 @@ Show the project structure here, overwriting the default as necessary.
 └── README.md          <- Top-level README - this file.
 ```
 
+## Instructions for using the API only
+
+The file `scripts/run_darthAPI.R` is the file run by the automated workflow.
+Within this file is a call to the API, shown below, undertaken using the `httr` package.
+To run this function you will need the api key, which I have stored as an environment variable `CONNECT_KEY`.
+
+```
+# function to call API to run the model
+httr::content(
+  httr::POST(
+    # the Server URL can also be kept confidential, but will leave here for now 
+    url = "https://connect.bresmed.com",
+    # path for the API within the server URL
+    path = "rhta2022/runDARTHmodel",
+    # code is passed to the client API from GitHub.
+    query = list(model_functions = "https://raw.githubusercontent.com/BresMed/plumberHE/main/R/darth_funcs.R"),
+    # set of parameters to be changed ... we are allowed to change these but not some others...
+    body = jsonlite::toJSON(data.frame(parameter = c("p_HS1","p_S1H"),
+                                       distribution = c("beta","beta"),
+                                       v1 = c(25, 50),
+                                       v2 = c(150, 100))),
+    # we include a key here to access the API ... like a password protection
+    config = httr::add_headers(Authorization = paste0("Key ", 
+                                             Sys.getenv("CONNECT_KEY")))
+  )
+)
+
+```
+
+The example plumber code used to generate the API can be found in `darthAPI`.
+
 ### List of contributors
 - [RobertASmith](Robert.Smith@lumanity.com)
 - [Paul Schneider](pschneider@darkpeakanalytics.com)
