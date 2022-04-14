@@ -1,0 +1,167 @@
+---
+title: "Living HTA: running models from client hosted APIs"
+author: "Robert Smith & Paul Schneider"
+date: "14/04/2022"
+output: 
+  pdf_document:
+    toc: true # table of content true
+    toc_depth: 3  # upto three depths of headings (specified by #, ## and ###)
+    number_sections: true  ## if you want number sections at each table header
+params:
+  df_results: "params$df_results"
+bibliography: darthAPI.bib
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(
+  echo = FALSE)
+```
+
+\newpage
+
+# Introduction
+
+Lorem ipsum dolor sit amet. Rem unde quia qui consectetur consequuntur et Quis dolorem et molestias porro. Sit blanditiis ratione est impedit molestiae eos laboriosam velit non itaque ipsam facilis tempore ad blanditiis suscipit. Est fugit accusantium qui recusandae dolor voluptatem praesentium ut perferendis repellat et perferendis fuga!
+
+Aut cupiditate consectetur ab amet quis ad facilis maxime ea incidunt mollitia hic incidunt obcaecati. Non unde nulla et modi assumenda et temporibus animi.
+
+Aut magni aperiam et nostrum tenetur eos velit beatae sed nemo incidunt. Aut delectus molestias et incidunt consectetur 33 sint blanditiis et facilis libero.
+
+\newpage
+
+# Methods
+
+Lorem ipsum dolor sit amet. Qui autem ipsam qui repellat nobis in nulla veniam. Qui voluptatem voluptas et dolores Quis 33 possimus galisum sed temporibus quam id deserunt amet et iusto consequatur? Aut voluptatem quis et minima consequatur quo quisquam consequuntur ea autem internos eum omnis temporibus. Ad dolorum modi sed impedit nostrum cum nobis tempora et quam iste nam quam soluta aut molestiae voluptatem!
+
+Non sunt deserunt quo iure minus qui error amet ea officiis enim. Aut voluptatem quam quo blanditiis similique aut vero cupiditate sit quisquam velit a quae mollitia. Quo nemo saepe cum provident explicabo qui corporis mollitia sit deserunt enim 33 fugit laudantium et nesciunt enim!
+
+
+
+## Data
+
+Rem sapiente debitis et odio tenetur ut odio velit eos similique delectus et ipsam Quis quo praesentium maiores ab ullam sint. Et ducimus repudiandae eum dignissimos cupiditate et temporibus error et odio voluptas. Aut pariatur repudiandae et officiis porro ut atque perspiciatis non quisquam totam. Sit dolorum voluptas qui minus ullam At quod dolore.
+
+## Clinical Effectiveness
+
+Qui nulla saepe et laudantium voluptas id magni sequi. Qui fuga laboriosam hic voluptatem dolor At voluptas atque eum dolorem molestias 33 vitae itaque et alias dicta. Qui necessitatibus iusto et magni modi quo libero Quis quo aliquid quaerat. Est omnis doloribus est error deserunt et velit officia est dicta voluptatibus! Quo odio aperiam et autem deleniti non veritatis nisi. Est obcaecati quia est itaque dolores qui expedita voluptatibus eum iure voluptate ut voluptatem laudantium.
+
+Vel inventore architecto est ipsa consequatur quo voluptatibus repellat ab modi earum. Qui itaque omnis ad obcaecati illo aut aspernatur nihil nam omnis perspiciatis ut mollitia optio aut beatae quos est deleniti perspiciatis. Sed explicabo doloremque qui numquam ipsam et neque nostrum et cupiditate voluptates est sint dolorum et voluptatem sapiente. In molestiae cupiditate et enim corrupti et mollitia rerum nam eveniet consequatur hic laudantium dolores quo soluta eveniet.
+
+Sit minima aliquid qui deserunt dolores sit ipsa internos ut doloremque pariatur. Sit magni eveniet vel quia dolorem et neque debitis aut labore rerum et nemo fuga cum maxime amet.
+
+
+## Economic Model
+
+Est deserunt rerum et architecto voluptatum aut dolores eius aut laboriosam omnis rem provident eveniet eos quibusdam accusantium ut quam laudantium. Ex similique porro a laudantium ipsum sed sunt saepe ut eius debitis. Ea soluta omnis aut quod doloribus ea ullam dolorum ut Quis perferendis et molestias accusantium est modi rerum.
+
+Lorem ipsum dolor sit amet. Qui optio quia a reprehenderit voluptatem ab repudiandae Quis et nihil? Et assumenda cumque et officiis ipsa sed quaerat delectus non placeat voluptatem ut corporis. Ut iusto voluptates et magnam dolorem est nobis nemo et quidem sint et ratione repellat est omnis repudiandae. Est repudiandae delectus rem odit praesentium non rerum nobis qui placeat sequi. Ut itaque natus in sapiente quas ea consequatur dolor et veniam dicta ut galisum sequi et voluptas ipsa. Qui excepturi harum et voluptas sunt et laudantium commodi sit dolorem officiis aut cupiditate saepe sed vitae molestiae ad quam commodi. Qui nesciunt dolore ut nemo autem quo voluptas unde 33 consequatur harum. Ut explicabo neque ea velit eius est molestiae vel nulla voluptatem ab consequatur vero sed debitis repellat. Et asperiores harum id dolore voluptatem sed quas galisum est natus maxime in possimus illum qui expedita vitae ea nisi soluta.
+
+Eum impedit quibusdam et minus minima eos aspernatur beatae qui dolores modi. Galisum consequatur quo corrupti voluptates 33 sunt pariatur ut consequatur maiores et ipsam asperiores? Et consequatur fuga est fugit labore ut internos mollitia aut corrupti voluptas. Eum ducimus nobis est veniam voluptatem ex doloribus harum. Quo accusamus facilis ea temporibus suscipit id harum accusantium aut magni neque ea inventore voluptatum sit facere tenetur est numquam asperiores. Quo totam consequatur qui nisi dolor ad ipsam error est corporis modi. Quo magni consectetur et consequatur quisquam aut autem esse. Aut modi placeat ut modi maxime et reprehenderit voluptas sed soluta facilis. Et corrupti voluptatem sit ipsam totam ab tempore illum ut sapiente omnis ex quia beatae nam galisum laudantium.
+
+Non dolorum sequi vel eius similique et tempore rerum. Et veniam tempore et pariatur deleniti et architecto soluta. Eos porro fugiat vel sunt voluptatum qui consequatur quos ut voluptatem ducimus. Est error repudiandae sed quis fugit nam reprehenderit molestiae. At earum suscipit et pariatur rerum quo consequatur atque. Sit aliquid dolorum sit dolorem voluptas qui omnis placeat et saepe impedit. Vel dolorem minima aut vero voluptatum ex reiciendis fugit qui harum beatae.
+
+Est officia consequatur sed dolores modi et iste doloremque sit galisum asperiores qui obcaecati quia et sint sapiente ut Quis repudiandae. Et vitae omnis ut unde omnis id officiis eveniet qui accusantium corporis non iusto officiis sit voluptatum dolore ut dolores veniam. Est rerum pariatur qui deserunt ducimus ea ullam deleniti ab soluta autem. Aut nostrum placeat et sunt assumenda hic ducimus doloremque! Sed cupiditate molestias et galisum incidunt qui ipsum ducimus sit labore aspernatur eum autem laboriosam At dolore atque.
+
+Est itaque enim est dolores nisi qui quia molestiae. Aut praesentium ducimus aut expedita voluptatum aut saepe ut aperiam consequatur hic consectetur sint ut dolor nobis est expedita dolor. Ut incidunt accusantium hic enim voluptas non maiores voluptatem et totam dolores vel dolores excepturi. Non aliquam accusantium est velit sint est sint sequi et consequatur quis ut doloremque error ut voluptatibus saepe qui possimus veritatis. Nam atque magni et harum dolore in magnam tempora? In minima sunt sed nihil dolor sit incidunt debitis aut veritatis error ea excepturi provident? Rem nisi excepturi et quia ratione et enim omnis vel voluptas molestiae qui minus dicta id galisum dolor? Id numquam molestiae eos ipsa internos et molestias deserunt. 33 quia modi est quisquam similique ab animi voluptatem.
+
+Ad laudantium eligendi est quaerat suscipit At odio voluptatem aut dolore voluptas aut alias fuga ea quasi corrupti aut distinctio quae. Et autem tempora ut repudiandae inventore est cumque voluptate a modi iste voluptas eligendi est nihil autem qui vitae doloremque? Et vitae dolores aut ipsa sunt sit illo sunt! Et magnam voluptatem et corrupti nihil et doloribus sint et dolorem cumque. Qui dolor mollitia qui magnam nihil eos debitis sint est quasi sint. Est numquam excepturi vel voluptas aliquam est accusantium tenetur vel consequatur fugit et alias magnam eum quasi voluptatem non consequatur voluptatem. Quo eveniet velit est facilis doloremque aut ipsa nulla aut molestias explicabo in voluptatem autem est saepe unde. Nam beatae illo 33 dolor atque aut molestiae velit qui maiores voluptas qui voluptatem voluptatem id dolores quaerat hic assumenda blanditiis! Sit perspiciatis odit ad beatae labore rem nisi illo id iure quisquam et rerum corrupti.
+
+\newpage
+
+# Results
+
+Aut fugiat odio ut repellat impedit aut numquam impedit qui delectus sint et dignissimos rerum id accusamus voluptatem 33 atque sunt. Id repellat facilis et omnis autem aut accusantium sint qui veritatis perspiciatis et autem architecto. Non quod consequuntur et perferendis dolorem hic iusto accusantium rem minus numquam? Id quidem perferendis qui ratione exercitationem aut magni quia qui cumque doloribus ea enim galisum non distinctio porro ad vitae sint.
+
+## Cost Effectiveness Plane
+
+Lorem ipsum dolor sit amet. Non deserunt quia ea nihil molestiae in distinctio cupiditate aut illo mollitia et impedit dolores et facere possimus. A delectus doloremque aut accusantium neque et quasi aperiam qui dolore amet ad cupiditate voluptatem quo quibusdam officia eum suscipit suscipit.
+
+Qui veniam molestiae qui quia sapiente aut tempore quae excepturi quia. Qui veritatis sunt aut modi adipisci cum sequi quidem qui animi. Non enim consectetur sed aperiam molestiae qui quis nobis est blanditiis quibusdam cum earum quis eos doloribus harum. Vel alias laborum qui ratione fuga ad harum omnis est quaerat esse ad nihil mollitia.
+
+Eos enim quia At galisum accusantium ea sapiente assumenda. Ut earum soluta ex tempore nostrum eos labore deleniti et voluptatem optio aut dolores fuga. Est alias suscipit qui magni dolorem in rerum ratione.
+
+
+```{r}
+#| eval = T, 
+#| echo = F,
+#| warning = F,
+#| message = F,
+#| fig.cap="Cost Effectiveness Plane for B vs A", 
+#| out.width = '75%'
+
+# rename the costs columns
+results_C <- params$df_results[,1:3]
+colnames(results_C) <- c("A", "B", "C")
+
+# same for qalys
+results_Q <- params$df_results[,4:6]
+colnames(results_Q) <- c("A", "B", "C")
+
+# create ceac based on brandtools package from lumanity...
+temp_cols <- brandtools::lumanity_palettes$neutral
+names(temp_cols) <- c("A", "B", "C")
+
+# create the CEP
+darkpeak::makeCEPlane(total_costs = results_C,
+                      total_qalys = results_Q,
+                      treatment = "B",
+                      comparitor = "A",
+                      thresh = 30000,
+                      show_ellipse = T)
+
+```
+
+Doloremque nobis rem molestiae quis non explicabo amet est sequi saepe est voluptates fugiat qui pariatur sunt. Accusamus dicta et doloremque enim est vero voluptatem. Et veritatis facere et libero dolore ea omnis cupiditate.
+
+Qui dolor corporis ex velit voluptatem vel amet placeat sed esse corporis. Ut officia quos ea eveniet rerum est error dicta. Ut assumenda sapiente quo quia iure id ipsam rerum.
+
+## Cost Effectiveness Acceptability Curve
+
+Lorem ipsum dolor sit amet. In porro laborum ab consectetur velit sit minus omnis et corporis cumque ea voluptatem eveniet eos consectetur autem. Aut quis nulla et ipsum architecto aut autem delectus ea fugit veritatis et sequi similique? 33 sint nesciunt est laboriosam perferendis aut maiores quaerat ut suscipit error. Et ullam pariatur qui repellat porro ut ducimus iste sed illum blanditiis.
+
+tenetur neque et nostrum voluptatem aut quam ducimus ut tenetur voluptas ut tenetur obcaecati vel doloremque ipsam. Rem sapiente voluptas non sapiente rerum et quia magnam
+
+```{r}
+#| eval = T, 
+#| echo = F,
+#| warning = F,
+#| message = F,
+#| fig.cap="Cost Effectiveness Acceptability Curves for A, B and C", 
+#| out.width = '75%'
+
+darkpeak::makeCEAC(total_costs = results_C,
+                   total_qalys = results_Q,
+                   treatment = c("A", "B", "C"),
+                   lambda_min = 0,
+                   lambda_max = 100000) + 
+  ggplot2::scale_colour_manual(values = temp_cols)
+
+```
+
+Non voluptate fuga ut quidem voluptates At tempora inventore sed laborum cumque eligendi consequuntur! Sed porro Quis aut excepturi numquam et placeat quibusdam. Quo obcaecati velit sed velit omnis et possimus odio vel iusto omnis aut quos galisum ut obcaecati praesentium et cupiditate sapiente. Ut omnis et molestias libero ut officia nisi ut galisum fugit galisum maxime aut deserunt doloremque rem perspiciatis sequi.
+
+
+
+\newpage
+
+# Discussion
+
+In accusamus provident eum explicabo perferendis sed vero nemo aut culpa quaerat aut omnis rerum? Est veniam corrupti eum quia dolores sed voluptatem perspiciatis est obcaecati quas. Eum rerum earum est voluptatum aspernatur vel voluptatibus omnis rem ipsa aliquid At ullam quas 33 similique suscipit ea illo fugit. Vel dolor ullam est adipisci nihil et necessitatibus galisum et aliquam aliquam. Ut dolorem quia sed molestiae voluptas ut voluptatum velit ut vero magni est inventore perspiciatis. Aut dolorem placeat quo autem ducimus et @Incertietal2018 neque ut rerum perferendis et voluptatem perferendis qui optio soluta. Est atque sequi aut odit quisquam ut accusantium asperiores sed natus odit sit dolorem minus sit accusamus exercitationem. Aut magnam quas aut sapiente minima ab optio eaque ab impedit mollitia ut praesentium internos eos neque minus quo ipsa exercitationem. Aut ratione quia sed ullam praesentium eos dolor neque sit eaque reiciendis in blanditiis cumque et quaerat beatae aut asperiores neque. Est quos eaque non corporis omnis ab molestiae aspernatur in obcaecati eaque vel laudantium assumenda. Eum Quis tempora non iure odit id fugiat ipsa aut autem ducimus consectetur. Cum omnis minus qui nulla quia aut similique fuga nam eveniet temporibus quo galisum omnis. Et autem reiciendis et velit laboriosam et repudiandae maxime ut facilis quibusdam. Sit facere voluptatem et maiores @smith2020making temporibus delectus.
+
+Ad neque possimus ut beatae quia quo laudantium aliquam et @Baio2019 corrupti ea tempora quia. Cum minus quod sed ipsum eius et reprehenderit voluptas ea fugit quae. Aut dolorum velit et voluptas dicta aut rerum soluta et magni explicabo sed aliquid molestias. Eum voluptate sequi est natus magni aut vitae dolores quo ducimus facere quo iste galisum vel facilis sequi. Et expedita expedita qui sint repellendus 33 harum dolorem id aspernatur dignissimos. Non nulla esse quo consequuntur similique qui esse nemo qui tempora repellendus. In ipsa officia ex tempore ipsam ad omnis labore qui quis voluptas cum quia dolores. Est officiis debitis id iure galisum accusamus perspiciatis nam dicta officiis.
+
+Sed nemo unde quo quia @Krijkampetal2020 eum placeat delectus quo libero officia et perferendis incidunt At similique nesciunt sed libero perferendis. Ea corrupti possimus ut earum deleniti a nihil facilis quo quibusdam odio et nihil eius et nulla adipisci ea iure tempore. Quo deleniti ducimus eos @hart2020r Quis sit recusandae deleniti ut cumque excepturi. In saepe labore ad delectus incidunt quo sint illo sit quidem expedita ut repellendus consequatur. Qui natus mollitia et velit neque sint dicta aut magnam nobis rem voluptas excepturi et cumque accusamus? Non quod iure aut @BaioHeath2016 tempore qui accusamus eius ut alias voluptas ut alias quos. Id similique repellat qui quaerat adipisci et esse nihil id autem necessitatibus a optio illum et atque voluptas At quia molestias? Non consequatur ipsa ut voluptatem quos qui alias illum rem dolorum deserunt est cumque sint non eveniet pariatur eum porro accusamus.
+
+ 
+
+\newpage
+
+# Conclusion
+
+Aut recusandae quod cum quasi rerum ut molestias provident sit vitae dicta id autem voluptatibus qui autem doloremque? Aut dolores saepe id ipsum perspiciatis non maiores consequatur sed dolorem provident 33 accusantium animi 33 autem ullam. Ut animi dicta et tempora Quis vel esse commodi 33 sint omnis non dignissimos velit sed totam distinctio ut velit debitis! Non repudiandae excepturi non ratione fugiat ut omnis earum qui perferendis nobis. Sit velit sapiente et enim recusandae id sequi itaque et vitae voluptatem ea ipsam sint aut voluptatem rerum!
+
+33 distinctio saepe id optio numquam qui alias voluptate qui odit odit et esse optio. Qui harum internos At provident nulla qui explicabo omnis! Et quaerat commodi est voluptatem internos est consequatur aperiam aut galisum excepturi aut laudantium similique? Dignissimos culpa hic voluptas voluptate hic tenetur aspernatur qui eligendi voluptatem. Qui minima obcaecati et reiciendis autem non dignissimos possimus in temporibus eligendi. Qui natus quaerat cum sunt distinctio et similique minus eum exercitationem laboriosam aut deleniti saepe ut laborum galisum a consequatur laudantium. Aut enim beatae cum odit accusamus et omnis tempora et voluptatem veniam et minima quia et voluptatibus dolorem eum natus animi.
+
+# References
+
+<div id="refs"></div>
