@@ -2,10 +2,10 @@ on:
   push:
     branches:
     - main
-  schedule:
-    - cron: '01 01 * * *'
+ # schedule:
+  #  - cron: '01 01 * * *'
 
-name: create-pull-request workflow
+name: Run DARTH model on client API
 jobs:
   createPullRequest:
     runs-on: windows-latest
@@ -17,7 +17,8 @@ jobs:
 
     - name: Install dependencies
       run: |
-          install.packages(c("jsonlite", "httr", "readr"))
+          install.packages(c("devtools", "jsonlite", "httr", "readr", "rmarkdown", "markdown", "ggplot2"))
+          devtools::install_github(repo = "dark-peak-analytics/darkpeak",ref = "main")
       shell: Rscript {0} 
 
     - name: Run the model from API and create report
