@@ -1,11 +1,11 @@
 # remove all existing data from the environment.
 rm(list = ls())
 
-library(ggplot2)
-library(darkpeak)
+#library(ggplot2)
+#library(darkpeak)
 library(jsonlite)
 library(httr)
-library(devtools)
+#library(devtools)
 
 # run the model using the connect server API
 results <- httr::content(
