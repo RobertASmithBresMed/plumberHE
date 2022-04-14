@@ -4,10 +4,10 @@ This repository was created for the [R-HTA](https://r-hta.org/) workshop, held i
 
 Robert Smith<sup>1,2,3</sup>,  Paul Schneider<sup>2,3</sup> & Praveen Thokala<sup>2</sup>
 
-<sup>1</sup> [Lumanity](https://lumanity.com/), Sheffield, UK; 
-<sup>2</sup> [University of Sheffield](https://www.sheffield.ac.uk/scharr), University of Sheffield, Sheffield, UK; 
+<sup>1</sup> [Lumanity](https://lumanity.com/), Sheffield, UK    
+<sup>2</sup> [University of Sheffield](https://www.sheffield.ac.uk/scharr), University of Sheffield, Sheffield, UK    
 <sup>3</sup> [Dark Peak Analytics](https://darkpeakanalytics.com/), Sheffield, UK;
-
+```
 #### **Background**
 
 The process of updating economic models is time-consuming and expensive, and often involves the transfer of sensitive data between parties.
@@ -39,6 +39,7 @@ As far as we are aware this is the first application of this process anywhere fo
 
 This example demonstrates that it is possible to separate an algorithm (a code base for a health economic model) from the data used by the model. 
 By using new open source tools data never left the client's server, yet analysis was undertaken and updated when necessary as new data was input by the client.
+```
 
 ## Project Organization
 
