@@ -103,7 +103,7 @@ httr::content(
 
 ```
 
-The example plumber code used to generate the API can be found in `darthAPI`.
+The example plumber code used to generate the API can be found in `darthAPI`. This is a development version of the code.
 
 ### List of contributors
 - [RobertASmith](Robert.Smith@lumanity.com)
