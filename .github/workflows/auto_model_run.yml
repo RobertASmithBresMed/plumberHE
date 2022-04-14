@@ -17,8 +17,7 @@ jobs:
 
     - name: Install dependencies
       run: |
-          install.packages(c("devtools", "ggplot2", "rmarkdown", "jsonlite", "httr"))
-          devtools::install_github("dark-peak-analytics/darkpeak")
+          install.packages(c("jsonlite", "httr"))
       shell: Rscript {0} 
 
     - name: Run the model from API and create report
