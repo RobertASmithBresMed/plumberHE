@@ -17,7 +17,7 @@ jobs:
 
     - name: Install dependencies
       run: |
-          install.packages(c("jsonlite", "httr"))
+          install.packages(c("jsonlite", "httr", "readr"))
       shell: Rscript {0} 
 
     - name: Run the model from API and create report
