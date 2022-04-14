@@ -89,9 +89,6 @@ Eos enim quia At galisum accusantium ea sapiente assumenda. Ut earum soluta ex t
 #| fig.cap="Cost Effectiveness Plane for B vs A", 
 #| out.width = '75%'
 
-source("makeCEAC.R")
-source("makeCEPlane.R")
-
 # rename the costs columns
 results_C <- params$df_results[,1:3]
 colnames(results_C) <- c("A", "B", "C")

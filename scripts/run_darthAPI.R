@@ -30,6 +30,9 @@ results <- httr::content(
 write.csv(x = results,
           file = "outputs/darth_model_results.csv")
 
+source("report/makeCEAC.R")
+source("report/makeCEPlane.R")
+
 # render the markdown document from the report folder, 
 # passing the results dataframe to the report.
 rmarkdown::render(input = "report/darthreport.Rmd",
