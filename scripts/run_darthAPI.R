@@ -2,10 +2,9 @@
 rm(list = ls())
 
 library(ggplot2)
-library(darkpeak)
 library(jsonlite)
 library(httr)
-library(devtools)
+library(scales)
 
 # run the model using the connect server API
 results <- httr::content(

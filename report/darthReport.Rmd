@@ -89,6 +89,9 @@ Eos enim quia At galisum accusantium ea sapiente assumenda. Ut earum soluta ex t
 #| fig.cap="Cost Effectiveness Plane for B vs A", 
 #| out.width = '75%'
 
+source("makeCEAC.R")
+source("makeCEPlane.R")
+
 # rename the costs columns
 results_C <- params$df_results[,1:3]
 colnames(results_C) <- c("A", "B", "C")
@@ -98,16 +101,17 @@ results_Q <- params$df_results[,4:6]
 colnames(results_Q) <- c("A", "B", "C")
 
 # create ceac based on brandtools package from lumanity...
-temp_cols <- brandtools::lumanity_palettes$neutral
+temp_cols <- c("#D8D2BF", "#001B2B", "#007B84")
 names(temp_cols) <- c("A", "B", "C")
 
 # create the CEP
-darkpeak::makeCEPlane(total_costs = results_C,
+makeCEPlane(total_costs = results_C,
                       total_qalys = results_Q,
                       treatment = "B",
                       comparitor = "A",
                       thresh = 30000,
-                      show_ellipse = T)
+                      show_ellipse = T,
+            colors = temp_cols)
 
 ```
 
@@ -129,12 +133,12 @@ tenetur neque et nostrum voluptatem aut quam ducimus ut tenetur voluptas ut tene
 #| fig.cap="Cost Effectiveness Acceptability Curves for A, B and C", 
 #| out.width = '75%'
 
-darkpeak::makeCEAC(total_costs = results_C,
+makeCEAC(total_costs = results_C,
                    total_qalys = results_Q,
                    treatment = c("A", "B", "C"),
                    lambda_min = 0,
-                   lambda_max = 100000) + 
-  ggplot2::scale_colour_manual(values = temp_cols)
+                   lambda_max = 100000,
+         col = temp_cols)
 
 ```
 
