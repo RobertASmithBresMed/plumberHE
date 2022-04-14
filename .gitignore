@@ -34,3 +34,5 @@ vignettes/*.pdf
 
 # R Environment Variables
 .Renviron
+
+darthAPI/rsconnect/*
