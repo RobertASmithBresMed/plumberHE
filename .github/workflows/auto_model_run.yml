@@ -8,7 +8,7 @@ on:
 name: Run DARTH model on client API
 jobs:
   createPullRequest:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
     env:
       GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
   # Load repo and install R
