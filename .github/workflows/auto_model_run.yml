@@ -29,7 +29,8 @@ jobs:
 
     - name: Install dependencies
       run: |
-          install.packages(c("reshape2","jsonlite", "httr", "readr", "rmarkdown", "markdown", "ggplot2"))
+          install.packages(c("reshape2","jsonlite", "httr", "readr", "rmarkdown", "markdown"))
+          install.packages("ggplot2", dependencies = TRUE)
       shell: Rscript {0} 
 
     - name: Run the model from API and create report
