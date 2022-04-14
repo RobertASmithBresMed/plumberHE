@@ -23,7 +23,7 @@ jobs:
 
     - name: Run the model from API and create report
       run: |
-          Sys.setenv(CONNECT_KEY = ${{ secrets.PLUMBER_SECRET}})
+          Sys.setenv(CONNECT_KEY = ${{secrets.PLUMBER_SECRET}})
           source("scripts/run_darthAPI.R")
       shell: Rscript {0} 
 
