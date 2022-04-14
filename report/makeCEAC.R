@@ -65,7 +65,7 @@ makeCEAC = function (total_costs = example_TC,
     ggplot2::scale_color_manual(name = "", values = legend_colors) +
     
     
-    ggplot2::scale_x_continuous(label = scales::label_comma(prefix = "\u00A3", scale = 1e-3, suffix = "k"))+
+    ggplot2::scale_x_continuous()+
     
     theme(
       legend.position = "top",

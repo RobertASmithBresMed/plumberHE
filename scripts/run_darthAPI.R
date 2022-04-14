@@ -4,7 +4,6 @@ rm(list = ls())
 library(ggplot2)
 library(jsonlite)
 library(httr)
-library(scales)
 
 # run the model using the connect server API
 results <- httr::content(

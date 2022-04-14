@@ -75,7 +75,7 @@ makeCEPlane = function (total_costs = example_TC,
         size = 3,
         pch = 21
       ) +
-      scale_y_continuous(labels = scales::label_comma(prefix = "\u00A3")) +
+      ggplot2::scale_y_continuous() +
       coord_cartesian(
         xlim = c(-quantile(abs(
           incr_long$incr_Q
