@@ -1,4 +1,4 @@
-This repository was created for the [R-HTA](https://r-hta.org/) workshop, held in Oxford on Thursday 19th 2022. 
+This repository was created for the [R-HTA](https://r-hta.org/) workshop, held in Oxford on Thursday 19th May 2022. 
 
 # **Automating a living health economic evaluation with GitHub Actions & Plumber APIs**
 
