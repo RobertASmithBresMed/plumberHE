@@ -13,7 +13,17 @@ jobs:
     steps:
     - uses: actions/checkout@master
     - uses: r-lib/actions/setup-r@master
-    - uses: r-lib/actions/setup-pandoc@v1
+    
+    - name: Setup pandoc
+      uses: r-lib/actions/setup-pandoc@v2
+      with:
+        pandoc-version: '2.17.1.1'
+    
+    - name: Install TinyTeX
+      uses: r-lib/actions/setup-tinytex@v2
+      env:
+          # install full prebuilt version
+          TINYTEX_INSTALLER: TinyTeX
 
     - name: Install dependencies
       run: |
