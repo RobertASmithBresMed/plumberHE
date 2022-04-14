@@ -299,6 +299,7 @@ run_model <-function(psa_inputs){
   # add prefixes to column names
   colnames(psa_costs_df) <- paste0("C_", colnames(psa_costs_df))
   colnames(psa_qalys_df) <- paste0("E_", colnames(psa_qalys_df))
+  
   # combined the two data-frames by width
   psa_df <- cbind(psa_costs_df, psa_qalys_df)
   
