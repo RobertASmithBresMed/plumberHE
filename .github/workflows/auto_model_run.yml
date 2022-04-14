@@ -1,0 +1,38 @@
+on:
+  push:
+    branches:
+    - main
+  schedule:
+    - cron: '01 01 * * *'
+
+name: create-pull-request workflow
+jobs:
+  createPullRequest:
+    runs-on: windows-latest
+  # Load repo and install R
+    steps:
+    - uses: actions/checkout@master
+    - uses: r-lib/actions/setup-r@master
+    - uses: r-lib/actions/setup-pandoc@v1
+
+    - name: Install dependencies
+      run: |
+          install.packages(c("devtools", "ggplot2", "rmarkdown", "jsonlite", "httr"))
+          devtools::install_github("dark-peak-analytics/darkpeak")
+      shell: Rscript {0} 
+
+    - name: Run the model from API and create report
+      run: |
+          Sys.setenv(CONNECT_KEY = ${{ secrets.PLUMBER_SECRET}})
+          source("scripts/run_darthAPI.R")
+      shell: Rscript {0} 
+
+    - name: Create Pull Request
+      uses: peter-evans/create-pull-request@v3
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+        commit-message: Automated Model Run from API
+        title: 'Living HTA Automated Model Run'
+        body: >
+          Automated model run
+        labels: report, automated pr
