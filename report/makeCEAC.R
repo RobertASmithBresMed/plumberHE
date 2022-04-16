@@ -49,10 +49,14 @@ makeCEAC = function (total_costs = example_TC,
     
     ggplot2::theme(
       legend.position = "top",
-      legend.text = ggplot2::element_text(size = 11),
-      legend.title = ggplot2::element_text(size = 11),
-      title = ggplot2::element_text(size = 11)
-    ) + ggplot2::geom_line(size = 1.5) +
+      legend.text = element_text(size = 14),
+      legend.title = element_text(size = 14),
+      axis.text.x = element_text(size = 14),
+      axis.text.y = element_text(size = 14),
+      title = element_text(size = 14)
+    ) + 
+    
+    ggplot2::geom_line(size = 1.5) +
     
     ggplot2::scale_y_continuous(
       breaks = seq(0, 1, 0.25),
@@ -62,18 +66,11 @@ makeCEAC = function (total_costs = example_TC,
     
     ggplot2::xlab(label = "Willingness-to-pay") +
     
-    ggplot2::scale_color_manual(name = "", values = legend_colors) +
+    ggplot2::scale_color_manual(name = "", 
+                                values = legend_colors) +
     
     
     ggplot2::scale_x_continuous()+
     
-    theme(
-      legend.position = "top",
-      legend.text = element_text(size = 14),
-      legend.title = element_text(size = 14),
-      axis.text.x = element_text(size = 14),
-      axis.text.y = element_text(size = 14),
-      title = element_text(size = 14)
-    ) +
     NULL
 }

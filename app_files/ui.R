@@ -1,5 +1,17 @@
+source("./landing_div.R")
+
 # Define UI for application that draws a histogram
-ui <- fluidPage(
+ui <- fillPage(
+  
+  # enable shinyjs
+  useShinyjs(),
+  # load js scripts
+  includeScript("./www/utils.js"),
+  # load custom css
+  includeCSS("style.css"),
+  
+  use_waiter(),
+  waiter_show_on_load(color = "", html = landingDiv()),
   
   # Application title
   titlePanel("Living HTA - Demo Shiny App"),
@@ -8,7 +20,9 @@ ui <- fluidPage(
   sidebarLayout(
     
     sidebarPanel(
+      
       tabsetPanel(
+            
         tabPanel(title = "State Trans Probs", 
                  
                  #=====================================#
@@ -85,7 +99,16 @@ ui <- fluidPage(
     )
   ),
   
-  "Important take-home from this very simple demo app is that the designer of the app
+  shiny::fluidRow(
+    p("Important take-home from this very simple demo app is that the designer of the app
        does not need to have: the model code, any data, any knowledge of health economics.
-       They just connect numeric inputs to JSON inputs to the model as requested by a health economist"
+       They just connect numeric inputs to JSON inputs to the model as requested by a health economist"),
+    br(),
+    column(offset = 3, 
+           width = 3, 
+           actionButton("code", "code", icon = icon("code"), class = "btn-info-2 my-2")),
+    column(width = 3, 
+           actionButton("contact", "contact", icon = icon("envelope"),class = "btn-info-2 my-2"))
+)
+
 )

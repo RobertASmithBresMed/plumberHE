@@ -1,6 +1,16 @@
 # Define server logic required to draw a histogram
 server <- function(input, output) {
   
+  library(shiny)
+  library(ggplot2)
+  library(scales)
+  library(reshape2)
+  library(shinybusy)
+  
+  source("../report/makeCEAC.R")
+  source("../report/makeCEPlane.R")
+  source("../app_files/landing_div.R")
+  
   list_results <- eventReactive(input$runModel, {
     
     # convert inputs into a single data-frame to be passed to the API call
@@ -12,7 +22,7 @@ server <- function(input, output) {
     )
     
     # show modal saying sending to API
-    show_modal_gif(text = "Interacting with client API",
+    shinybusy::show_modal_gif(text = "Interacting with client API",
                    modal_size = "l",
                    width = "200px", 
                    height = "300px",
@@ -36,7 +46,7 @@ server <- function(input, output) {
       )
     )
     # show modal saying finished getting data from API
-    remove_modal_gif()
+    shinybusy::remove_modal_gif()
     
     # rename the costs columns
     results_C <- results[,1:3]

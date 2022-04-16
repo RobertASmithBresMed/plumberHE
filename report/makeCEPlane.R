@@ -51,9 +51,9 @@ makeCEPlane = function (total_costs = example_TC,
     incr_means = merge(incr_mean_Q, incr_mean_C, by = "Treatment")
     if (show_ellipse) {
       ce_plane_plot = ce_plane_plot +
-        stat_ellipse(
+        ggplot2::stat_ellipse(
           data = incr_long[!(incr_long$Treatment %in% comparitor),],
-          aes(x = incr_Q, y = incr_C, col = Treatment),
+          ggplot2::aes(x = incr_Q, y = incr_C, col = Treatment),
           type = "norm",
           level = 0.9,
           segments = 50
@@ -61,20 +61,21 @@ makeCEPlane = function (total_costs = example_TC,
     }
     
     ce_plane_plot = ce_plane_plot +
-      geom_point(
+      ggplot2::geom_point(
         data = incr_long,
-        aes(x = incr_Q, y = incr_C, col = Treatment),
+        ggplot2::aes(x = incr_Q, y = incr_C, col = Treatment),
         alpha = 0.5,
         size = 0.7
       ) +
       
-      geom_point(
+      ggplot2::geom_point(
         data = incr_means,
-        aes(x = incr_Q, y = incr_C, fill = Treatment),
+        ggplot2::aes(x = incr_Q, y = incr_C, fill = Treatment),
         col = "black",
         size = 3,
         pch = 21
       ) +
+      
       ggplot2::scale_y_continuous() +
       coord_cartesian(
         xlim = c(-quantile(abs(
@@ -94,7 +95,7 @@ makeCEPlane = function (total_costs = example_TC,
     if (!is.null(legend_colors)) {
       ce_plane_plot = ce_plane_plot +
         
-        scale_fill_manual(name = NULL,
+        ggplot2::scale_fill_manual(name = NULL,
                           values = legend_colors,
                           guide = F) +
         guides(color = guide_legend(override.aes = list(
