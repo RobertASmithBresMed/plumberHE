@@ -99,7 +99,7 @@ ui <- fillPage(
     )
   ),
   
-  shiny::fluidRow(
+  fluidRow(
     p("Important take-home from this very simple demo app is that the designer of the app
        does not need to have: the model code, any data, any knowledge of health economics.
        They just connect numeric inputs to JSON inputs to the model as requested by a health economist"),
