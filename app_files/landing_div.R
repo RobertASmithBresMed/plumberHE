@@ -9,7 +9,7 @@ landingDiv = function(){
                       Living HTA - DEMO USER-INTERFACE
                     </div>
                     <div class="intro-text fs-2 intro-subtitle mx-auto my-5">
-                        Robert Smith, Paul Schneider, Praveen Thokala
+                        Robert Smith & Paul Schneider
                     </div>
                     <div class = "logos d-flex flex-row justify-content-center flex-wrap mx-auto px-5">
                         <div class="cell">

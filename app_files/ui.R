@@ -4,17 +4,19 @@ source("./landing_div.R")
 ui <- fillPage(
   
   # enable shinyjs
-  useShinyjs(),
+  #useShinyjs(),
   # load js scripts
   includeScript("./www/utils.js"),
   # load custom css
   includeCSS("style.css"),
   
-  use_waiter(),
-  waiter_show_on_load(color = "", html = landingDiv()),
+  waiter::use_waiter(),
+  waiter::waiter_show_on_load(color = "", html = landingDiv()),
   
   # Application title
-  titlePanel("Living HTA - Demo Shiny App"),
+  titlePanel( h1("Living HTA - Demo Shiny App", 
+                 align = "center",color = "#012d5c")
+              ),
   
   # Sidebar with a slider input for number of bins 
   sidebarLayout(
@@ -100,15 +102,33 @@ ui <- fillPage(
   ),
   
   fluidRow(
-    p("Important take-home from this very simple demo app is that the designer of the app
+  column(
+    width = 10,
+    offset = 1,
+    p(
+      "The take-home from this very simple demo app is that the designer of the app
        does not need to have: the model code, any data, any knowledge of health economics.
-       They just connect numeric inputs to JSON inputs to the model as requested by a health economist"),
-    br(),
-    column(offset = 3, 
-           width = 3, 
-           actionButton("code", "code", icon = icon("code"), class = "btn-info-2 my-2")),
-    column(width = 3, 
-           actionButton("contact", "contact", icon = icon("envelope"),class = "btn-info-2 my-2"))
-)
+       They just connect numeric inputs to JSON inputs to the model as requested by a health economist"
+    )
+  )), # end row
+  
+  br(),
+  
+  fluidRow(
+  column(
+    offset = 3,
+    width = 3,
+    actionButton("code", "code", icon = icon("code"), class = "btn-info-2 my-2")
+  ),
+  column(
+    width = 3,
+    actionButton(
+      "contact",
+      "contact",
+      icon = icon("envelope"),
+      class = "btn-info-2 my-2"
+    )
+  )
+) # end row
 
 )

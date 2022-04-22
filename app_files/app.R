@@ -1,10 +1,7 @@
+# NOTE: BEFORE RUNNING THIS APP, PLEASE ENSURE YOU HAVE THE FOLLOWING SYS.ENV SET: 
 #
-# This is a Shiny web application. You can run the application by clicking
-# the 'Run App' button above.
-#
-# Find out more about building applications with Shiny here:
-#
-#    http://shiny.rstudio.com/
+# Sys.setenv(CONNECT_KEY = "")
+# Sys.setenv(SERVER_URL = "")
 #
 rm(list = ls())
 
@@ -17,5 +14,4 @@ rm(list = ls())
 #source("app_files/landing_div.R")
 
 # Run the application 
-shinyApp(ui = ui, 
-         server = server)
+runApp("app_files")

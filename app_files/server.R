@@ -6,6 +6,7 @@ server <- function(input, output) {
   library(scales)
   library(reshape2)
   library(shinybusy)
+  library(waiter)
   
   source("../report/makeCEAC.R")
   source("../report/makeCEPlane.R")
@@ -45,6 +46,9 @@ server <- function(input, output) {
                                                           Sys.getenv("CONNECT_KEY")))
       )
     )
+    # insert debugging message
+    message("API returned results")
+    
     # show modal saying finished getting data from API
     shinybusy::remove_modal_gif()
     
