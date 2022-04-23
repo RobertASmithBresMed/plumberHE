@@ -14,7 +14,12 @@ server <- function(input, output) {
   
   list_results <- eventReactive(input$runModel, {
     
-    # PS: Should eve
+    # PS: error message when api key not provided? 
+    # Is the API/key supposed accessible to everyone?
+    if(Sys.getenv("CONNECT_KEY") == ""){
+      shiny::showNotification(type = "error","Error: No API Key provided")
+      return(NULL)
+    }
     
     # convert inputs into a single data-frame to be passed to the API call
     df_input <- data.frame(
