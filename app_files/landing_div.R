@@ -13,13 +13,13 @@ landingDiv = function(){
                     </div>
                     <div class = "logos d-flex flex-row justify-content-center flex-wrap mx-auto px-5">
                         <div class="cell">
-                            <img  class ="image" src="sheffield_logo.png" style="height:50px;width:auto">
+                            <img  class ="image" src="sheffield_logo.png" style="height:70px;width:auto">
                         </div>
                         <div class="cell">
-                            <img class ="image" src="lumanity_logo.png" style="height:50px;width:auto">
+                            <img class ="image" src="lumanity_logo.png" style="height:70px;width:auto">
                         </div>
                         <div class="cell">
-                            <img class ="image" src="dpa_logo.png" style="height:50px;width:auto">
+                            <img class ="image" src="dpa_logo.png" style="height:70px;width:auto">
                         </div>
                     </div>
                     <div class="progress">

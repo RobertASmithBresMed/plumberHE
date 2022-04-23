@@ -3,6 +3,24 @@ source("./landing_div.R")
 # Define UI for application that draws a histogram
 ui <- fillPage(
   
+  shiny::tags$head(
+    tags$title(
+      "PlumberHE demo"
+    )
+  ),
+  # suppressDependencies("bootstrap"),
+  tags$link(
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css",
+    rel="stylesheet",
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC",
+    crossorigin="anonymous"
+  ),
+  # tags$script(
+  #   src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js",
+  #   integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM",
+  #   crossorigin="anonymous"
+  # ),
+  
   # enable shinyjs
   #useShinyjs(),
   # load js scripts
@@ -15,8 +33,8 @@ ui <- fillPage(
   
   # Application title
   titlePanel( h1("Living HTA - Demo Shiny App", 
-                 align = "center",color = "#012d5c")
-              ),
+                 align = "center",color = "#012d5c", style = "margin-bottom: 20px;")
+  ),
   
   # Sidebar with a slider input for number of bins 
   sidebarLayout(
@@ -24,7 +42,7 @@ ui <- fillPage(
     sidebarPanel(
       
       tabsetPanel(
-            
+        
         tabPanel(title = "State Trans Probs", 
                  
                  #=====================================#
@@ -47,7 +65,7 @@ ui <- fillPage(
                               min = 0,
                               max = 200,
                               value = 170)
-                 ),
+        ),
         
         tabPanel(title = "Utilities", 
                  #=====================================#
@@ -70,15 +88,15 @@ ui <- fillPage(
                               min = 0,
                               max = 200,
                               value = 45)
-                 )
+        )
       ),
       
-    
+      
       
       
       
       # action button to run the model
-      actionButton("runModel", "Run Model"),
+      actionButton("runModel", "Run Model", class = "btn btn-primary btn-lg"),
       
     ),
     
@@ -86,6 +104,7 @@ ui <- fillPage(
     mainPanel(
       tabsetPanel(
         tabPanel(title = "Model Output",
+                class = "p-3",
                  column(width = 6,align="center",
                         h2("QALYs"),
                         tableOutput(outputId = "ResultsTab_Q")),
@@ -93,42 +112,46 @@ ui <- fillPage(
                         h2("Costs"),
                         tableOutput(outputId = "ResultsTab_C"))),
         tabPanel(title = "CE Plane", 
+                 class = "p-3",
                  plotOutput(outputId = "CEPlane")),
         tabPanel(title = "CEAC", 
+                 class = "p-3",
                  plotOutput(outputId = "CEAC"))
       )
       
     )
   ),
   
-  fluidRow(
-  column(
-    width = 10,
-    offset = 1,
-    p(
-      "The take-home from this very simple demo app is that the designer of the app
+  div(
+    class = "card mt-3 mb-5 shadow-lg w-50 mx-auto",
+    div(
+      class = "card-header",
+      "Take-home messager"
+    ),
+    div(
+      class = "card-body",
+      div(
+        
+        p(
+          "The take-home from this very simple demo app is that the designer of the app
        does not need to have: the model code, any data, any knowledge of health economics.
        They just connect numeric inputs to JSON inputs to the model as requested by a health economist"
-    )
-  )), # end row
-  
-  br(),
-  
-  fluidRow(
-  column(
-    offset = 3,
-    width = 3,
-    actionButton("code", "code", icon = icon("code"), class = "btn-info-2 my-2")
-  ),
-  column(
-    width = 3,
-    actionButton(
-      "contact",
-      "contact",
-      icon = icon("envelope"),
-      class = "btn-info-2 my-2"
-    )
+        )
+      )), # end row
+    
+    
+    
+    div(
+      class = "d-flex justify-content-center w-100 mb-4", 
+      actionButton("code", "code", icon = icon("code"), class = "btn-info-2"),
+    
+      actionButton(
+        "contact",
+        "contact",
+        icon = icon("envelope"),
+        class = "btn-info-2"
+      )
   )
-) # end row
-
+  )
+  
 )

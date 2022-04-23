@@ -41,40 +41,9 @@ Robert Smith<sup>1,2,3</sup>,  Paul Schneider<sup>2,3</sup> & Praveen Thokala<su
 >By using new open source tools data never left the client's server, yet analysis was undertaken and updated when necessary as new data was input by the client.
 
 
-## Project Organization
-
-Show the project structure here, overwriting the default as necessary.
-
-------------------------
-
-```
-├── data
-│   └── processed      <- Processed, cleaned data - likely not used here.
-│
-├── outputs            <- Generated outputs (reports, figures, etc)
-│
-├── report             <- Write up for external use. Rmarkdown files, bibtex etc.. include templates if not in BresMed package.
-│
-├── R                  <- Source code for use in this project, all functions.
-│
-├── tests              <- Tests for this project - e.g. testthat.
-│
-├── scripts            <- Scripts that may run specific analyses
-│
-├── app_files          <- Folder for Shiny App content, includes file app.R.
-│  └── UI              <- folder with UI content.
-│  └── server          <- folder containing server file.
-│  └── www             <- other content.
-│
-├──.github 
-│  └── workflows       <- contains all workflows for github actions.
-│
-├── .gitignore         <- indicating which files should be ignored by git
-│
-└── README.md          <- Top-level README - this file.
-```
-
 ## Instructions for using the API only
+
+<!-- THE INSTRUCTIONS ARE NOT CLEAR: HOW DO I RUN THE WORKFLOW? WHERE CAN I FIND THE CONNECT_KEY ? -->
 
 The file `scripts/run_darthAPI.R` is the file run by the automated workflow.
 Within this file is a call to the API, shown below, undertaken using the `httr` package.
