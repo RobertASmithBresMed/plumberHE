@@ -126,7 +126,7 @@ ui <- fillPage(
     class = "card mt-3 mb-5 shadow-lg w-50 mx-auto",
     div(
       class = "card-header",
-      "Take-home messager"
+      "Why does this matter ... "
     ),
     div(
       class = "card-body",

@@ -32,13 +32,17 @@ Robert Smith<sup>1,2,3</sup> &  Paul Schneider<sup>2,3</sup>
 <img src='app_files/www/process_diagram.PNG' height="300" align="center"/>
 
 
-## Instructions for using the API only
+## Creating the API
 
-<!-- THE INSTRUCTIONS ARE NOT CLEAR: HOW DO I RUN THE WORKFLOW? WHERE CAN I FIND THE CONNECT_KEY ? -->
+The example plumber code used to generate the API can be found in the `darthAPI` folder. This is a development version of the code.
+
+## Using the API
 
 The file `scripts/run_darthAPI.R` is the file run by the automated workflow.
+
 Within this file is a call to the API, shown below, undertaken using the `httr` package.
-To run this function you will need the api key, which I have stored as an environment variable `CONNECT_KEY`.
+
+It is not possible to run this function yourself, since it requires the API key, which I have stored as an environment variable `CONNECT_KEY`. However the code used to call the API can be seen below:
 
 ```
 # function to call API to run the model
@@ -63,7 +67,9 @@ httr::content(
 
 ```
 
-The example plumber code used to generate the API can be found in `darthAPI`. This is a development version of the code.
+## Creating the automated workflow
+
+The automated workflow is run on GitHub actions at 00:01 at the first of each month, and can be found in `.github/workflows/auto_model_run.yml`.
 
 ### List of contributors
 - [RobertASmith](Robert.Smith@lumanity.com)
