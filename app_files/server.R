@@ -14,6 +14,13 @@ server <- function(input, output) {
   
   list_results <- eventReactive(input$runModel, {
     
+    # PS: error message when api key not provided? 
+    # Is the API/key supposed accessible to everyone?
+    if(Sys.getenv("CONNECT_KEY") == ""){
+      shiny::showNotification(type = "error","Error: No API Key provided")
+      return(NULL)
+    }
+    
     # convert inputs into a single data-frame to be passed to the API call
     df_input <- data.frame(
       parameter = c("p_HS1", "u_S1"),
@@ -42,6 +49,7 @@ server <- function(input, output) {
         # set of parameters to be changed ... we are allowed to change these but not some others...
         body = jsonlite::toJSON(df_input),
         # we include a key here to access the API ... like a password protection
+
         config = httr::add_headers(Authorization = paste0("Key ", 
                                                           Sys.getenv("CONNECT_KEY")))
       )
