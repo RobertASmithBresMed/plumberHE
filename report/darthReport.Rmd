@@ -1,7 +1,7 @@
 ---
 title: "Living HTA: running models from client hosted APIs"
 author: "Robert Smith & Paul Schneider"
-date: "14/04/2022"
+date: "`r Sys.Date()`"
 output: 
   pdf_document:
     toc: true # table of content true
