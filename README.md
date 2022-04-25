@@ -29,8 +29,8 @@ Robert Smith<sup>1,2,3</sup> &  Paul Schneider<sup>2,3</sup>
 
 
 ## Diagram
+<img src='app_files/www/process_diagram.PNG' height="300" align="center"/>
 
-[!Diagram]('app_files/www/process_diagram.PNG')
 
 ## Project Organization
 
