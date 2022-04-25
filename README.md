@@ -28,6 +28,10 @@ Robert Smith<sup>1,2,3</sup> &  Paul Schneider<sup>2,3</sup>
 >This example demonstrates that it is possible, within a HEOR setting, to separate the health economic model from the data, and automate the main steps of the analysis pipeline. We believe this is the first application of this procedure for a HEOR project.
 
 
+## Diagram
+
+[!Diagram]('app_files/www/process_diagram.PNG')
+
 ## Project Organization
 
 Show the project structure here, overwriting the default as necessary.
