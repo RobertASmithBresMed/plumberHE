@@ -2,7 +2,7 @@ This repository was created for the [R-HTA](https://r-hta.org/) workshop, held i
 
 # **Automating a living health economic evaluation with GitHub Actions & Plumber APIs**
 
-Robert Smith<sup>1,2,3</sup>,  Paul Schneider<sup>2,3</sup> & Praveen Thokala<sup>2</sup>
+Robert Smith<sup>1,2,3</sup> &  Paul Schneider<sup>2,3</sup> 
 
 <sup>1</sup> [Lumanity](https://lumanity.com/), Sheffield, UK    
 <sup>2</sup> [University of Sheffield](https://www.sheffield.ac.uk/scharr), University of Sheffield, Sheffield, UK    
@@ -10,35 +10,22 @@ Robert Smith<sup>1,2,3</sup>,  Paul Schneider<sup>2,3</sup> & Praveen Thokala<su
 
 >#### **Background**
 >
->The process of updating economic models is time-consuming and expensive, and often involves the transfer of sensitive data between parties.
->However, recent advances in data and computing sciences can be combined with script based health economic models to provide living health economic analysis, that is, analysis
->that is continually being updated as new evidence, and our understanding of the world, emerge.
->Allowing clients to retain control of their data, while automating much of the health economic analysis, would be a desirable step forward for HEOR.
->The following describes a simple worked example of an automated health economic evaluation which is run monthly, or as new data emerges.
->
+>The process of updating economic models is time-consuming and expensive, and often involves the transfer of sensitive data between parties. Here, we demonstrate how HEOR can be conducted in a way that allows clients to retain full control of their data, while automating reporting as new information becomes available.
 >
 >#### **Methods**
 >
->The materials demonstrate how economic models can be separated from any sensitive data on which they rely, allowing for companies to retain control of their data at all times >and allowing models to be automatically updated as new data becomes available. There are three parts to achieving this:
->- An API, generated using the R package [plumber](https://www.rplumber.io/?msclkid=b4faa783bbfc11ec93ded7f5b4523880/) is hosted on a client server (on RStudio Connect). This API >hosts all sensitive data, so that data does not have to be provided to the consultant. 
->- An economic model, written in a script based programming language, is constructed by the consultant using pseudo data and hosted on GitHub. For this example we use the >sick-sicker model created as a teaching tool by the [DARTH group](http://darthworkgroup.com/). 
->- An automated workflow is created using GitHub actions. This workflow passes the model code to the client API, which runs the model within the client server and returns the >results of the economic analysis. This workflow can be scheduled to run at certain time points (e.g. monthly), or when triggered by an event (e.g. an update to the model). A >report is generated from the workflow using [RMarkdown](https://rmarkdown.rstudio.com/?msclkid=2f44ca56bbfe11eca6ec37c1951dc1f9).
->
->A diagram of the method is shown below.
->
->**< INSERT DIAGRAM HERE >**
+>We developed an automated analysis and reporting pipeline for health economic modelling and made the source code openly available on a GitHub repository. It consists of three parts:
+> -	An economic model is constructed by the consultant using pseudo data (i.e. random data, which has the same format as the real data).
+> -	On the client side, an application programming interface (API), generated using the R package plumber, is hosted on a server. An automated workflow is created. This workflow sends the economic model to the client API. The model is then run within the client server. The results are sent back to the consultant, and a (PDF) report is automatically generated using RMarkdown.
+> - This API hosts all sensitive data, so that data does not have to be provided to the consultant.
 >
 >#### **Results & Discussion**
 >
->The method is relatively complex, and would require a strong understanding of R, APIs, RMarkdown and GitHub Actions.
->However, the end result is a process by which a client never needs to release their sensitive data to a consultant, reducing concerns about data-security.
->The entire process is automated, such that it can be triggered by a client if data is provided ad-hoc, or run on a schedule if data is continually updated.
->As far as we are aware this is the first application of this process anywhere for a HEOR project.
+>The method is relatively complex, and requires a strong understanding of R, APIs, RMarkdown and GitHub Actions. However, the end result is a process, which allows the consultant to conduct health economic (or any other) analyses on client data, without having direct access – the client does not need to share their sensitive data. The workflow can be scheduled to run at defined time points (e.g. monthly), or when triggered by an event (e.g. an update to the underlying data or model code). Results are generated automatically and wrapped into a full report. Documents no longer need to be revised manually.
 >
 >#### **Conclusions**
 >
->This example demonstrates that it is possible to separate an algorithm (a code base for a health economic model) from the data used by the model. 
->By using new open source tools data never left the client's server, yet analysis was undertaken and updated when necessary as new data was input by the client.
+>This example demonstrates that it is possible, within a HEOR setting, to separate the health economic model from the data, and automate the main steps of the analysis pipeline. We believe this is the first application of this procedure for a HEOR project.
 
 
 ## Project Organization
