@@ -1,0 +1,85 @@
+---
+output: 
+  #html_document: default
+  pdf_document: default
+bibliography: academic_paper.bib
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Living HEOR: Automating HTA with R
+
+*Smith R^1^, Schneider PP^1^*
+
+<br>
+
+\begingroup\small
+*^1^ Lumanity, Sheffield*  
+*^2^ Dark Peak Analytics, Sheffield*   
+*^3^ School of Health and Related Research, University of Sheffield*
+\endgroup
+
+<br>
+
+  __Keywords__:  `HEOR`, `HTA`, `APIs`, `R`, `Plumber`.  
+  
+  __Intended Journal__: Wellcome Open Research
+
+****  
+
+## Introduction
+
+The process of updating economic models is time-consuming and expensive, and often involves the transfer of sensitive data between parties. This paper aims to demonstrate how updates to models in the Health Economics & Outcomes Research (HEOR) industry can be conducted in a way that allows clients, primarily those in the pharmaceutical industry, to retain full control of their data. We continue on to show how to automate reporting as new information becomes available, without the transfer of data between parties.
+
+## Method
+
+We developed an automated analysis and reporting pipeline for health economic modelling and made the source code openly available on a GitHub repository. It consists of three parts:
+-	An economic model is constructed by the consultant using pseudo data (i.e. random data, which has the same format as the real data).
+-	On the company side, an application programming interface (API), generated using the R package plumber, is hosted on a server. An automated workflow is created. This workflow sends the economic model to the company API. The model is then run within the company server. The results are sent back to the consultant, and a (PDF) report is automatically generated using RMarkdown.
+- This API hosts all sensitive data, so that data does not have to be provided to the consultant.
+- All of these processes can be controlled through an RShiny app, based on the tutorial application in our previous paper [@smith2020making].
+
+![Schematic showing the interaction between the Company API and the Consultant Automated Workflow](../app_files/www/process_diagram.PNG)
+
+All of the scripts discussed in this paper, as well as the code for the demonstration app can be found contained within an open access  [GitHub repository](https://github.com/RobertASmithBresMed/plumberHE).
+
+### The API
+
+#### Plumber
+
+```{r, file='../darthAPI/plumber.R',eval = F, echo = T}
+```
+
+#### RStudio Connect
+
+It is possible to deploy the API direct to RStudio connect from Rstudio IDE. This makes things very simple...
+
+### The model code
+
+This model code has been taken directly from ....
+
+```{r, file='../R/darth_funcs.R', eval = F, echo = T}
+```
+
+### Automating the model run
+
+#### Interact with API from RScript
+```{r, file='../scripts/run_darthAPI.R',eval = F, echo = T}
+```
+
+#### Use GitHub actions to automate the process
+```{r, file='../.github/workflows/auto_model_run.yml',eval = F, echo = T}
+```
+
+## Discussion
+
+The method is relatively complex, and requires a strong understanding of R, APIs, RMarkdown and GitHub Actions. However, the end result is a process, which allows the consultant to conduct health economic (or any other) analyses on company data, without having direct access – the company does not need to share their sensitive data. The workflow can be scheduled to run at defined time points (e.g. monthly), or when triggered by an event (e.g. an update to the underlying data or model code). Results are generated automatically and wrapped into a full report. Documents no longer need to be revised manually.
+
+## Conclusions
+
+This example demonstrates that it is possible, within a HEOR setting, to separate the health economic model from the data, and automate the main steps of the analysis pipeline. We believe this is the first application of this procedure for a HEOR project.
+
+\newpage
+## References
