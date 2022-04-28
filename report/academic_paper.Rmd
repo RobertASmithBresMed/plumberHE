@@ -54,11 +54,12 @@ All of the scripts discussed in this paper, as well as the code for the demonstr
 
 #### RStudio Connect
 
-It is possible to deploy the API direct to RStudio connect from Rstudio IDE. This makes things very simple...
+Once you have an account, it is simple to deploy the API direct to [RStudio connect](https://www.rstudio.com/products/connect/) from the Rstudio IDE. RStudio have a blog on how to publish an API created using Plumber to RStudio connect [here](https://www.rstudio.com/blog/rstudio-1-2-preview-plumber-integration/#:~:text=%20Resources%20%201%20Creating%20an%20API.%20On,APIs%20defined%20in%20your%20project%20and...%20More%20)
+
 
 ### The model code
 
-This model code has been taken directly from ....
+This model code has been amended from the DARTH group's open source Cohort state-transition model (the Sick-Sicker Model) which can be found in this [GitHub repository](https://github.com/DARTH-git/Cohort-modeling-tutorial/) and is discussed in @alarid2020cohort.
 
 ```{r, file='../R/darth_funcs.R', eval = F, echo = T}
 ```
