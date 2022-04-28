@@ -64,9 +64,26 @@ In the examples below we use JSON to pass information to and from our API.
 
 #### Plumber
 
-Insert description of plumber and what it does....
+Plumber allows programmers to create web APIs by decorating R source code with roxygen-style comments. The source code looks like a series of functions, which are not assigned to objects, with roxygen style comments specifying the parameters input to the function, the name of the function, and the output from the function. These functions are then made available as API endpoints by plumber. 
 
-```{r, file='../darthAPI/plumber.R',eval = F, echo = T, class.source = 'fold-hide'}
+The code below give an example function which echo's a message (returns the message).
+The function takes one input, a string with the message, and outputs the message.
+The API can be called using any type of request, the below shows and example of the GET request (the default for web-browsers).
+
+```{r, eval = F, echo = T}
+
+#* Echo back the input
+#* @param msg The message to echo
+#* @get /echo
+function(msg="") {
+  list(msg = paste0("The message is: '", msg, "'"))
+}
+
+```
+
+
+
+```{r, file='../darthAPI/plumber.R', eval = F, echo = T, class.source = 'fold-hide'}
 ```
 
 #### RStudio Connect
@@ -78,10 +95,14 @@ Once you have an account, it is simple to deploy the API direct to [RStudio conn
 
 This model code has been amended from the DARTH group's open source Cohort state-transition model (the Sick-Sicker Model) which can be found in this [GitHub repository](https://github.com/DARTH-git/Cohort-modeling-tutorial/) and is discussed in @alarid2020cohort.
 
+The code includes several functions, but for the purpose of this example we can treat the model as a black box, as a single function called 'run_model' which runs the DARTH Sick Sicker model. The 'run_model' function requires as an input a data-frame containing the PSA iteration values for each variable. The function runs the model and returns a data-frame with costs and QALYs for three distinct scenarios.
+
 ```{r, file='../R/darth_funcs.R', eval = F, echo = F}
 ```
 
 ### Automating the model run
+
+The model run can be automated. We first show how to run the model from an R script, calling the API. We then continue to show how to use GitHub actions to automate the process.
 
 #### Interact with API from RScript
 ```{r, file='../scripts/run_darthAPI.R',eval = F, echo = T}

@@ -155,7 +155,8 @@ run_sick_sicker_model = function(l_params,
     v_Q[1] = 0 # no upfront QALYs
     
     for (t in 1:n_cycles){ # throughout the number of cycles
-      m_Trace[t + 1, ] = m_Trace[t, ] %*% m_P # calculate trace for cycle (t + 1) based on cycle t
+      # calculate trace for cycle (t + 1) based on cycle t
+      m_Trace[t + 1, ] = m_Trace[t, ] %*% m_P 
       
       v_C[t + 1] = m_Trace[t + 1, ] %*% v_state_cost
       
