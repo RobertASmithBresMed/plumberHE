@@ -12,7 +12,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 # Living HEOR: Automating HTA with R {.tabset}
 
-*Robert A Smith^1^ & Paul P Schneider^1^*
+*Robert A Smith^1^, Paul P Schneider^2,3^ & Wael Mohammed^2,3^*
 
 <br>
 
