@@ -34,13 +34,19 @@ knitr::opts_chunk$set(echo = TRUE)
 
 The process of updating economic models is time-consuming and expensive, and often involves the transfer of sensitive data between parties. This paper aims to demonstrate how updates to models in the Health Economics & Outcomes Research (HEOR) industry can be conducted in a way that allows clients, primarily those in the pharmaceutical industry, to retain full control of their data. We continue on to show how to automate reporting as new information becomes available, without the transfer of data between parties.
 
+A previous publication by @adibi2022programmable made the case for cloud based platforms to improve the accessibility, transparency and standardization of health economic models, particularly highlighting the benefits of hosting computationally burdensome models on remote servers. However, to our knowledge this is the first publication to demonstrate the feasibility of the use of APIs to avoid the need for companies to share sensitive data, and also the first to provide open source code for the semi-automation of model updates in health economics.
+
 ## Method {.tabset}
 
 We developed an automated analysis and reporting pipeline for health economic modelling and made the source code openly available on a GitHub repository. It consists of three parts:
--	An economic model is constructed by the consultant using pseudo data (i.e. random data, which has the same format as the real data).
--	On the company side, an application programming interface (API), generated using the R package plumber, is hosted on a server. An automated workflow is created. This workflow sends the economic model to the company API. The model is then run within the company server. The results are sent back to the consultant, and a (PDF) report is automatically generated using RMarkdown.
-- This API hosts all sensitive data, so that data does not have to be provided to the consultant.
-- All of these processes can be controlled through an RShiny app, based on the tutorial application in our previous paper [@smith2020making].
+
+*	An economic model is constructed by the consultant using pseudo data (i.e. random data, which has the same format as the real data).
+
+*	On the company side, an application programming interface (API), generated using the R package plumber, is hosted on a server. An automated workflow is created. This workflow sends the economic model to the company API. The model is then run within the company server. The results are sent back to the consultant, and a (PDF) report is automatically generated using RMarkdown.
+
+* This API hosts all sensitive data, so that data does not have to be provided to the consultant.
+
+* All of these processes can be controlled through an RShiny app, based on the tutorial application in our previous paper [@smith2020making].
 
 ![Schematic showing the interaction between the Company API and the Consultant Automated Workflow](../app_files/www/process_diagram.PNG)
 
@@ -61,14 +67,23 @@ There are lots of different implementations of APIs, but the main focus of this 
 
 In the examples below we use JSON to pass information to and from our API.
 
+#### The model code
+
+This model code has been amended from the DARTH group's open source Cohort state-transition model (the Sick-Sicker Model) which can be found in this [GitHub repository](https://github.com/DARTH-git/Cohort-modeling-tutorial/) and is discussed in @alarid2020cohort.
+
+The code includes several functions, but for the purpose of this example we can treat the model as a black box, as a single function called 'run_model' which runs the DARTH Sick Sicker model. The 'run_model' function requires as an input a data-frame containing the PSA iteration values for each variable. The function runs the model and returns a data-frame with costs and QALYs for three distinct scenarios.
+
+```{r, file='../R/darth_funcs.R', eval = F, echo = F}
+```
+
 
 #### Plumber
 
 Plumber allows programmers to create web APIs by decorating R source code with roxygen-style comments. The source code looks like a series of functions, which are not assigned to objects, with roxygen style comments specifying the parameters input to the function, the name of the function, and the output from the function. These functions are then made available as API endpoints by plumber. 
 
-The code below give an example function which echo's a message (returns the message).
-The function takes one input, a string with the message, and outputs the message.
-The API can be called using any type of request, the below shows and example of the GET request (the default for web-browsers).
+The code below give an example function which echos a message. The function takes one input, a string with the message, and outputs the message contained within a list. If this function was created in R it would return a list containing some text, like this:  `r    list(msg = paste0("The message is: '", "example_msg", "'"))`. 
+
+The API can be called using any type of request, the below shows and example of the 'GET' request (the default for web-browsers).
 
 ```{r, eval = F, echo = T}
 
@@ -81,24 +96,20 @@ function(msg="") {
 
 ```
 
+The code for the model function utilises the same principle, but is much more developed. There are three parameter inputs:
 
+* *path_to_psa_inputs* 
+* *model_functions*
+* *param_updates*
+
+The function sources the model functions from GitHub, obtains the model parameter data from within the API, and then overwrites the rows of the parameter updates that exist in *param_updates*. It then runs the model functions using the updated parameters, post-processes the results, checks that no sensitive data is included in the results, and then returns a data-frame of results. This entire process occurs on the server on which the API is hosted, with inputs and outputs passed to the API over the web in JSON format. 
 
 ```{r, file='../darthAPI/plumber.R', eval = F, echo = T, class.source = 'fold-hide'}
 ```
 
-#### RStudio Connect
+#### Deploying an API
 
-Once you have an account, it is simple to deploy the API direct to [RStudio connect](https://www.rstudio.com/products/connect/) from the Rstudio IDE. RStudio have a blog on how to publish an API created using Plumber to RStudio connect [here](https://www.rstudio.com/blog/rstudio-1-2-preview-plumber-integration/#:~:text=%20Resources%20%201%20Creating%20an%20API.%20On,APIs%20defined%20in%20your%20project%20and...%20More%20)
-
-
-### The model code
-
-This model code has been amended from the DARTH group's open source Cohort state-transition model (the Sick-Sicker Model) which can be found in this [GitHub repository](https://github.com/DARTH-git/Cohort-modeling-tutorial/) and is discussed in @alarid2020cohort.
-
-The code includes several functions, but for the purpose of this example we can treat the model as a black box, as a single function called 'run_model' which runs the DARTH Sick Sicker model. The 'run_model' function requires as an input a data-frame containing the PSA iteration values for each variable. The function runs the model and returns a data-frame with costs and QALYs for three distinct scenarios.
-
-```{r, file='../R/darth_funcs.R', eval = F, echo = F}
-```
+In this example we have deployed the API on RStudio Connect. An account is required for this, but once you have one it is possible to deploy the API direct to [RStudio connect](https://www.rstudio.com/products/connect/) from the Rstudio IDE. RStudio have a blog on how to publish an API created using Plumber to RStudio connect [here](https://www.rstudio.com/blog/rstudio-1-2-preview-plumber-integration/#:~:text=%20Resources%20%201%20Creating%20an%20API.%20On,APIs%20defined%20in%20your%20project%20and...%20More%20). There are numerous other providers of cloud computing services, many at cheaper prices, but no others with such ease of deployment from RStudio.
 
 ### Automating the model run
 
