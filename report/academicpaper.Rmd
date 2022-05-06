@@ -1,36 +1,70 @@
 ---
-title: ""
+title: Living HEOR, Automating HTA with R
+author:
+  - name: Robert A Smith
+    affil: 
+    - 1 
+    - 2 
+    - 3
+    email: rasmith3@sheffield.ac.uk
+    corresponding: TRUE
+  - name: Paul P Schneider
+    affil: 
+    - 2
+    - 3
+    email: pschneider@darkpeakanalytics.com
+    corresponding: FALSE
+  - name: Wael Mohammed
+    affil: 
+    - 2
+    - 3
+    email: wmohammed@darkpeakanalytics.com
+    corresponding: FALSE
+address:
+  - code: 1 
+    address: Lumanity, Sheffield
+  - code: 2
+    address: Dark Peak Analytics, Sheffield
+  - code: 3
+    address: School of Health and Related Research, University of Sheffield
+abstract: |
+  Background
+  The process of updating economic models is time-consuming and expensive, and often involves the transfer of sensitive data between parties. Here, we demonstrate how HEOR can be conducted in a way that allows clients to retain full control of their data, while automating reporting as new information becomes available.
+
+  Method
+  We developed an automated analysis and reporting pipeline for health economic modelling and made the source code openly available on a [GitHub](https://github.com/RobertASmithBresMed/plumberHE) repository. It consists of three parts:
+  An economic model is constructed by the consultant using pseudo data (i.e. random data, which has the same format as the real data).
+  On the client side, an application programming interface (API), generated using the R package plumber, is hosted on a server. An automated workflow is created. This workflow sends the economic model to the client API. The model is then run within the client server. The results are sent back to the consultant, and a (PDF) report is automatically generated using RMarkdown.. 
+  This API hosts all sensitive data, so that data does not have to be provided to the consultant.
+
+  Results & Discussion
+  The method is relatively complex, and requires a strong understanding of R, APIs, RMarkdown and GitHub Actions. However, the end result is a process, which allows the consultant to conduct health economic (or any other) analyses on client data, without having direct access – the client does not need to share their sensitive data. The workflow can be scheduled to run at defined time points (e.g. monthly), or when triggered by an event (e.g. an update to the underlying data or model code). Results are generated automatically and wrapped into a full report. Documents no longer need to be revised manually.
+
+  Conclusions
+  This example demonstrates that it is possible, within a HEOR setting, to separate the health economic model from the data, and automate the main steps of the analysis pipeline. We believe this is the first application of this procedure for a HEOR project.
+  
+keywords: |
+   `HEOR`, `HTA`, `APIs`, `R`, `Plumber`.
+
+date: "`r Sys.Date()`"
+bibliography: academicpaper.bib
+link-citations: TRUE
+# Setting CSL will be necessary if you use `citation_packahe = "default"`
+# You can download the csl file if preferred and use it locally with `csl: elsevier-vancouver.csl`
+# csl: https://www.zotero.org/styles/elsevier-vancouver
 output: 
-  #html_document: default
-  pdf_document: default
-bibliography: academic_paper.bib
+  rticles::wellcomeor_article:
+    citation_package: natbib
+  bookdown::pdf_book:
+    base_format: rticles::wellcomeor_article
+    citation_package: natbib
 ---
 
+\bigskip 
+
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(echo = TRUE, size = "tiny")
 ```
-
-# Living HEOR: Automating HTA with R {.tabset}
-
-*Robert A Smith^1^, Paul P Schneider^2,3^ & Wael Mohammed^2,3^*
-
-<br>
-
-\begingroup\small
-*^1^ Lumanity, Sheffield*  
-*^2^ Dark Peak Analytics, Sheffield*   
-*^3^ School of Health and Related Research, University of Sheffield*
-\endgroup
-
-<br>
-
-  __Keywords__:  `HEOR`, `HTA`, `APIs`, `R`, `Plumber`.  
-  
-  __Intended Journal__: Wellcome Open Research
-  
-  __Corresponding Author__: Robert A Smith (*rasmith3@sheffield.ac.uk*)
-
-****  
 
 ## Introduction
 
@@ -38,7 +72,7 @@ The process of updating economic models is time-consuming and expensive, and oft
 
 A previous publication by @adibi2022programmable made the case for cloud based platforms to improve the accessibility, transparency and standardization of health economic models, particularly highlighting the benefits of hosting computationally burdensome models on remote servers. However, to our knowledge this is the first publication to demonstrate the feasibility of the use of APIs to avoid the need for companies to share sensitive data, and also the first to provide open source code for the semi-automation of model updates in health economics.
 
-## Method {.tabset}
+## Method
 
 We developed an automated analysis and reporting pipeline for health economic modelling and made the source code openly available on a GitHub repository. It consists of three parts:
 
@@ -50,7 +84,9 @@ We developed an automated analysis and reporting pipeline for health economic mo
 
 * All of these processes can be controlled through an RShiny app, based on the tutorial application in our previous paper [@smith2020making].
 
-![Schematic showing the interaction between the Company API and the Consultant Automated Workflow](../app_files/www/process_diagram.PNG)
+```{r, echo=FALSE, out.width="90%", fig.cap="Schematic showing the interaction between the Company API and the Consultant Automated Workflow"}
+knitr::include_graphics("../app_files/www/process_diagram.PNG")
+```
 
 All of the scripts discussed in this paper, as well as the code for the demonstration app can be found contained within an open access  [GitHub repository](https://github.com/RobertASmithBresMed/plumberHE).
 
@@ -83,9 +119,10 @@ There are lots of different implementations of APIs, but the main focus of this 
 
 In the examples below we use JSON to pass information to and from our API.
 
-
+::: {.tiny}
 ```{r, file='../R/darth_funcs.R', eval = F, echo = F}
 ```
+:::
 
 #### Plumber
 
@@ -95,7 +132,8 @@ The code below give an example function which echos a message. The function take
 
 The API can be called using any type of request, the below shows and example of the 'GET' request (the default for web-browsers).
 
-```{r, eval = F, echo = T}
+::: {.tiny}
+```{r, eval = F, echo = T, attr.source='.numberLines'}
 
 #* Echo back the input
 #* @param msg The message to echo
@@ -105,6 +143,8 @@ function(msg="") {
 }
 
 ```
+
+::: 
 
 The code for the model function uses the same principles, but is much more developed. There are three parameter inputs:
 
@@ -180,6 +220,3 @@ A recent working paper by @adibi2022programmable has provided a similar call to 
 ## Conclusions
 
 This example framework, with accompanying open source code base, demonstrates that it is possible, within a HEOR setting, to separate the health economic model from the data, and automate the main steps of the analysis pipeline. We believe this is the first application of this procedure for a HEOR project, and is certainly the first example to be made open source for the benefit of the wider community. We hope that this framework will improve the transparency of health economic models, reduce the cost & administrative burden of updating models, and increase the speed at which updates can occur.
-
-\newpage
-## References
