@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.5.6)  6 MAY 2022 22:20
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.5.6)  7 MAY 2022 13:47
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -967,62 +967,62 @@ LaTeX Font Info:    Font shape `T1/mdbch/m/n' will be
 LaTeX Font Info:    Font shape `T1/cmtt/m/n' will be
 (Font)              scaled to size 10.72006pt on input line 103.
 
-Underfull \hbox (badness 10000) in paragraph at lines 102--109
+Underfull \hbox (badness 10000) in paragraph at lines 102--107
 
  []
 
 LaTeX Font Info:    Font shape `OT1/phv/m/n' will be
-(Font)              scaled to size 8.82996pt on input line 111.
+(Font)              scaled to size 8.82996pt on input line 109.
 
-Underfull \hbox (badness 2277) in paragraph at lines 111--117
-[]\OT1/phv/b/n/10 Abstract[] \OT1/phv/m/n/10 Back-ground The pro-cess of up-dat-ing eco-nomic mod-els is time-
+Underfull \hbox (badness 1577) in paragraph at lines 109--115
+[]\OT1/phv/b/n/10 Abstract[] Back-ground \OT1/phv/m/n/10 The pro-cess of up-dat-ing eco-nomic mod-els is time-
  []
 
 
-Overfull \hbox (83.29239pt too wide) in paragraph at lines 111--148
+Overfull \hbox (83.29239pt too wide) in paragraph at lines 109--147
 [] $[]$ 
  []
 
 LaTeX Font Info:    Font shape `T1/mdbch/m/n' will be
-(Font)              scaled to size 13.82408pt on input line 149.
+(Font)              scaled to size 13.82408pt on input line 148.
 LaTeX Font Info:    Font shape `OT1/phv/b/n' will be
-(Font)              scaled to size 12.71512pt on input line 149.
+(Font)              scaled to size 12.71512pt on input line 148.
 LaTeX Font Info:    Font shape `T1/mdbch/m/fsc' will be
-(Font)              scaled to size 9.60007pt on input line 153.
-<WellcomeOR_logo_black.pdf, id=39, 275.0275pt x 24.09pt>
+(Font)              scaled to size 9.60007pt on input line 152.
+<WellcomeOR_logo_black.pdf, id=57, 275.0275pt x 24.09pt>
 File: WellcomeOR_logo_black.pdf Graphic file (type pdf)
 <use WellcomeOR_logo_black.pdf>
-Package pdftex.def Info: WellcomeOR_logo_black.pdf  used on input line 153.
+Package pdftex.def Info: WellcomeOR_logo_black.pdf  used on input line 152.
 (pdftex.def)             Requested size: 136.99722pt x 12.0pt.
 LaTeX Font Info:    Font shape `T1/mdbch/m/n' will be
-(Font)              scaled to size 7.68005pt on input line 153.
+(Font)              scaled to size 7.68005pt on input line 152.
 [1{c:/Users/Robert/AppData/Roaming/TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
 
 
  <./WellcomeOR_logo_black.pdf>]
 LaTeX Font Info:    Font shape `T1/mdbch/m/n' will be
-(Font)              scaled to size 11.52008pt on input line 158.
+(Font)              scaled to size 11.52008pt on input line 157.
 LaTeX Font Info:    Font shape `OT1/phv/b/n' will be
-(Font)              scaled to size 10.59595pt on input line 158.
+(Font)              scaled to size 10.59595pt on input line 157.
 
-Underfull \hbox (badness 3019) in paragraph at lines 160--168
+Underfull \hbox (badness 3019) in paragraph at lines 159--167
 []\T1/mdbch/m/n/10 The pro-cess of up-dat-ing eco-nomic mod-els is time-
  []
 
 
-Underfull \hbox (badness 2547) in paragraph at lines 181--184
+Underfull \hbox (badness 2547) in paragraph at lines 180--183
 []\T1/mdbch/m/n/10 We de-vel-oped an au-to-mated anal-y-sis and re-port-ing
  []
 
-LaTeX Font Info:    Trying to load font information for TS1+mdbch on input line 187.
+LaTeX Font Info:    Trying to load font information for TS1+mdbch on input line 186.
 (c:/Users/Robert/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/mathdesign/mdbch/ts1mdbch.fd
 File: ts1mdbch.fd 2013/08/29 Fontinst v1.933 font definitions for TS1/mdbch.
 )
 LaTeX Font Info:    Font shape `TS1/mdbch/m/n' will be
-(Font)              scaled to size 9.60007pt on input line 187.
+(Font)              scaled to size 9.60007pt on input line 186.
 
-Underfull \hbox (badness 2229) in paragraph at lines 190--197
+Underfull \hbox (badness 2229) in paragraph at lines 189--196
 \T1/mdbch/m/n/10 in-ter-face (API), gen-er-ated us-ing the R pack-age
  []
 
@@ -1030,64 +1030,69 @@ Underfull \hbox (badness 2229) in paragraph at lines 190--197
 
 (academicpaper.fff)
 LaTeX Font Info:    Font shape `T1/mdbch/m/it' will be
-(Font)              scaled to size 9.60007pt on input line 224.
+(Font)              scaled to size 9.60007pt on input line 223.
 LaTeX Font Info:    Font shape `T1/mdbch/b/n' will be
-(Font)              scaled to size 9.60007pt on input line 272.
+(Font)              scaled to size 9.60007pt on input line 271.
 File: WellcomeOR_logo_black.pdf Graphic file (type pdf)
 <use WellcomeOR_logo_black.pdf>
-Package pdftex.def Info: WellcomeOR_logo_black.pdf  used on input line 291.
+Package pdftex.def Info: WellcomeOR_logo_black.pdf  used on input line 290.
 (pdftex.def)             Requested size: 136.99722pt x 12.0pt.
 [2
 
 ]
 LaTeX Font Info:    Font shape `T1/mdbch/m/n' will be
-(Font)              scaled to size 4.80003pt on input line 302.
+(Font)              scaled to size 4.80003pt on input line 301.
 LaTeX Font Info:    Font shape `T1/cmtt/m/it' will be
-(Font)              scaled to size 10.72006pt on input line 302.
+(Font)              scaled to size 10.72006pt on input line 301.
 LaTeX Font Info:    Font shape `T1/cmtt/b/n' in size <10> not available
-(Font)              Font shape `T1/cmtt/bx/n' tried instead on input line 305.
+(Font)              Font shape `T1/cmtt/bx/n' tried instead on input line 304.
 LaTeX Font Info:    Font shape `T1/cmtt/bx/n' in size <10> not available
-(Font)              Font shape `T1/cmtt/m/n' tried instead on input line 305.
+(Font)              Font shape `T1/cmtt/m/n' tried instead on input line 304.
 LaTeX Font Info:    Font shape `T1/cmtt/m/n' will be
-(Font)              scaled to size 10.72006pt on input line 305.
-LaTeX Font Info:    Trying to load font information for TS1+cmtt on input line 306.
+(Font)              scaled to size 10.72006pt on input line 304.
+LaTeX Font Info:    Trying to load font information for TS1+cmtt on input line 305.
 (c:/Users/Robert/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/base/ts1cmtt.fd
 File: ts1cmtt.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `T1/cmtt/b/it' in size <10> not available
-(Font)              Font shape `T1/cmtt/bx/it' tried instead on input line 335.
+(Font)              Font shape `T1/cmtt/bx/it' tried instead on input line 334.
 LaTeX Font Info:    Font shape `T1/cmtt/bx/it' in size <10> not available
-(Font)              Font shape `T1/cmtt/m/it' tried instead on input line 335.
+(Font)              Font shape `T1/cmtt/m/it' tried instead on input line 334.
 LaTeX Font Info:    Font shape `T1/cmtt/m/it' will be
-(Font)              scaled to size 10.72006pt on input line 335.
+(Font)              scaled to size 10.72006pt on input line 334.
 
 Underfull \vbox (badness 1237) has occurred while \output is active []
 
 File: WellcomeOR_logo_black.pdf Graphic file (type pdf)
 <use WellcomeOR_logo_black.pdf>
-Package pdftex.def Info: WellcomeOR_logo_black.pdf  used on input line 424.
+Package pdftex.def Info: WellcomeOR_logo_black.pdf  used on input line 423.
 (pdftex.def)             Requested size: 136.99722pt x 12.0pt.
 [3]
 File: WellcomeOR_logo_black.pdf Graphic file (type pdf)
 <use WellcomeOR_logo_black.pdf>
-Package pdftex.def Info: WellcomeOR_logo_black.pdf  used on input line 601.
+Package pdftex.def Info: WellcomeOR_logo_black.pdf  used on input line 600.
 (pdftex.def)             Requested size: 136.99722pt x 12.0pt.
 [4]
-Underfull \hbox (badness 1173) in paragraph at lines 623--627
+Underfull \hbox (badness 1173) in paragraph at lines 622--626
 []\T1/mdbch/m/n/10 Firstly, no data needs to leave the data-owner's
  []
 
 File: WellcomeOR_logo_black.pdf Graphic file (type pdf)
 <use WellcomeOR_logo_black.pdf>
-Package pdftex.def Info: WellcomeOR_logo_black.pdf  used on input line 681.
+Package pdftex.def Info: WellcomeOR_logo_black.pdf  used on input line 680.
 (pdftex.def)             Requested size: 136.99722pt x 12.0pt.
 [5]
-Underfull \hbox (badness 4108) in paragraph at lines 709--718
+Underfull \hbox (badness 4108) in paragraph at lines 708--717
 []\T1/mdbch/m/n/10 This ex-am-ple frame-work, with ac-com-pa-ny-ing open
  []
 
+
+Underfull \hbox (badness 1057) in paragraph at lines 733--736
+\T1/mdbch/m/n/10 Doc-toral Train-ing Cen-tre in Pub-lic Health Eco-nomics
+ []
+
 LaTeX Font Info:    Font shape `T1/mdbch/m/n' will be
-(Font)              scaled to size 8.64006pt on input line 720.
+(Font)              scaled to size 8.64006pt on input line 759.
 (./academicpaper.bbl
 LaTeX Font Info:    Font shape `T1/mdbch/m/it' will be
 (Font)              scaled to size 8.64006pt on input line 13.
@@ -1135,10 +1140,10 @@ Underfull \hbox (badness 1127) in paragraph at lines 34--38
 AED: lastpage setting LastPage
 File: WellcomeOR_logo_black.pdf Graphic file (type pdf)
 <use WellcomeOR_logo_black.pdf>
-Package pdftex.def Info: WellcomeOR_logo_black.pdf  used on input line 741.
+Package pdftex.def Info: WellcomeOR_logo_black.pdf  used on input line 780.
 (pdftex.def)             Requested size: 136.99722pt x 12.0pt.
 [6] AED endfloat: Processing end Figures and Tables (./academicpaper.fff
-<../app_files/www/process_diagram.png, id=159, 573.64313pt x 325.215pt>
+<../app_files/www/process_diagram.png, id=180, 573.64313pt x 325.215pt>
 File: ../app_files/www/process_diagram.png Graphic file (type png)
 <use ../app_files/www/process_diagram.png>
 Package pdftex.def Info: ../app_files/www/process_diagram.png  used on input line 2.
@@ -1146,29 +1151,29 @@ Package pdftex.def Info: ../app_files/www/process_diagram.png  used on input lin
 )
 File: WellcomeOR_logo_black.pdf Graphic file (type pdf)
 <use WellcomeOR_logo_black.pdf>
-Package pdftex.def Info: WellcomeOR_logo_black.pdf  used on input line 741.
+Package pdftex.def Info: WellcomeOR_logo_black.pdf  used on input line 780.
 (pdftex.def)             Requested size: 136.99722pt x 12.0pt.
 [7 <../app_files/www/process_diagram.PNG>] (./academicpaper.aux)
 Package rerunfilecheck Info: File `academicpaper.out' has not changed.
-(rerunfilecheck)             Checksum: F06021436DD176F92C24A41B3CA84392;817.
+(rerunfilecheck)             Checksum: 370F2739ECE97B6A7C9001A6368E1A5B;1537.
  )
 (\end occurred inside a group at level 1)
 
-### simple group (level 1) entered at line 720 ({)
+### simple group (level 1) entered at line 759 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 26297 strings out of 480260
- 490277 string characters out of 5892767
- 760567 words of memory out of 5000000
- 43672 multiletter control sequences out of 15000+600000
+ 26317 strings out of 480260
+ 490623 string characters out of 5892767
+ 762567 words of memory out of 5000000
+ 43682 multiletter control sequences out of 15000+600000
  539346 words of font info for 135 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 114i,16n,131p,474b,531s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 114i,16n,131p,474b,533s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <c:/Users/Robert/AppData/Roaming/TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ectt0900.643pk> <c:/Users/Robert/AppData/Roaming/TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/tctt1000.600pk>{c:/Users/Robert/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/ly1/texnansi.enc}{c:/Users/Robert/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/base/8r.enc} <c:/Users/Robert/AppData/Roaming/TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ectt1000.643pk><c:/Users/Robert/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/bitstrea/charter/bchb8a.pfb><c:/Users/Robert/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/bitstrea/charter/bchr8a.pfb><c:/Users/Robert/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/bitstrea/charter/bchri8a.pfb><c:/Users/Robert/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/mathdesign/mdbch/md-chr8t.pfb><c:/Users/Robert/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb><c:/Users/Robert/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb>
-Output written on academicpaper.pdf (7 pages, 784131 bytes).
+Output written on academicpaper.pdf (7 pages, 786692 bytes).
 PDF statistics:
- 327 PDF objects out of 1000 (max. 8388607)
- 167 compressed objects within 2 object streams
- 38 named destinations out of 1000 (max. 500000)
- 79 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 349 PDF objects out of 1000 (max. 8388607)
+ 189 compressed objects within 2 object streams
+ 48 named destinations out of 1000 (max. 500000)
+ 119 words of extra memory for PDF output out of 10000 (max. 10000000)
 

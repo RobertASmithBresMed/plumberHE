@@ -12,13 +12,11 @@ author:
     affil: 
     - 2
     - 3
-    email: pschneider@darkpeakanalytics.com
     corresponding: FALSE
   - name: Wael Mohammed
     affil: 
     - 2
     - 3
-    email: wmohammed@darkpeakanalytics.com
     corresponding: FALSE
 address:
   - code: 1 
@@ -27,21 +25,14 @@ address:
     address: Dark Peak Analytics, Sheffield
   - code: 3
     address: School of Health and Related Research, University of Sheffield
-abstract: |
-  Background
-  The process of updating economic models is time-consuming and expensive, and often involves the transfer of sensitive data between parties. Here, we demonstrate how HEOR can be conducted in a way that allows clients to retain full control of their data, while automating reporting as new information becomes available.
+abstract: |   
+  **Background** The process of updating economic models is time-consuming and expensive, and often involves the transfer of sensitive data between parties. Here, we demonstrate how HEOR can be conducted in a way that allows clients to retain full control of their data, while automating reporting as new information becomes available. 
+  
+  **Method** We developed an automated analysis and reporting pipeline for health economic modelling and made the source code openly available on a [GitHub](https://github.com/RobertASmithBresMed/plumberHE) repository. It consists of three parts: An economic model is constructed by the consultant using pseudo data (i.e. random data, which has the same format as the real data). On the client side, an application programming interface (API), generated using the R package plumber, is hosted on a server. An automated workflow is created. This workflow sends the economic model to the client API. The model is then run within the client server. The results are sent back to the consultant, and a (PDF) report is automatically generated using RMarkdown. This API hosts all sensitive data, so that data does not have to be provided to the consultant. 
+  
+  **Results & Discussion** The method is relatively complex, and requires a strong understanding of R, APIs, RMarkdown and GitHub Actions. However, the end result is a process, which allows the consultant to conduct health economic (or any other) analyses on client data, without having direct access – the client does not need to share their sensitive data. The workflow can be scheduled to run at defined time points (e.g. monthly), or when triggered by an event (e.g. an update to the underlying data or model code). Results are generated automatically and wrapped into a full report. Documents no longer need to be revised manually.
 
-  Method
-  We developed an automated analysis and reporting pipeline for health economic modelling and made the source code openly available on a [GitHub](https://github.com/RobertASmithBresMed/plumberHE) repository. It consists of three parts:
-  An economic model is constructed by the consultant using pseudo data (i.e. random data, which has the same format as the real data).
-  On the client side, an application programming interface (API), generated using the R package plumber, is hosted on a server. An automated workflow is created. This workflow sends the economic model to the client API. The model is then run within the client server. The results are sent back to the consultant, and a (PDF) report is automatically generated using RMarkdown.. 
-  This API hosts all sensitive data, so that data does not have to be provided to the consultant.
-
-  Results & Discussion
-  The method is relatively complex, and requires a strong understanding of R, APIs, RMarkdown and GitHub Actions. However, the end result is a process, which allows the consultant to conduct health economic (or any other) analyses on client data, without having direct access – the client does not need to share their sensitive data. The workflow can be scheduled to run at defined time points (e.g. monthly), or when triggered by an event (e.g. an update to the underlying data or model code). Results are generated automatically and wrapped into a full report. Documents no longer need to be revised manually.
-
-  Conclusions
-  This example demonstrates that it is possible, within a HEOR setting, to separate the health economic model from the data, and automate the main steps of the analysis pipeline. We believe this is the first application of this procedure for a HEOR project.
+  **Conclusions** This example demonstrates that it is possible, within a HEOR setting, to separate the health economic model from the data, and automate the main steps of the analysis pipeline. We believe this is the first application of this procedure for a HEOR project.
   
 keywords: |
    `HEOR`, `HTA`, `APIs`, `R`, `Plumber`.
@@ -84,7 +75,9 @@ We developed an automated analysis and reporting pipeline for health economic mo
 
 * All of these processes can be controlled through an RShiny app, based on the tutorial application in our previous paper [@smith2020making].
 
-```{r, echo=FALSE, out.width="90%", fig.cap="Schematic showing the interaction between the Company API and the Consultant Automated Workflow"}
+```{r}
+#| echo=FALSE, out.width="90%", 
+#| fig.cap="Schematic showing the interaction between the Company API and the Consultant Automated Workflow"
 knitr::include_graphics("../app_files/www/process_diagram.PNG")
 ```
 
@@ -120,7 +113,9 @@ There are lots of different implementations of APIs, but the main focus of this 
 In the examples below we use JSON to pass information to and from our API.
 
 ::: {.tiny}
-```{r, file='../R/darth_funcs.R', eval = F, echo = F}
+```{r}
+#| file='../R/darth_funcs.R', 
+#| eval = F, echo = F
 ```
 :::
 
@@ -133,7 +128,9 @@ The code below give an example function which echos a message. The function take
 The API can be called using any type of request, the below shows and example of the 'GET' request (the default for web-browsers).
 
 ::: {.tiny}
-```{r, eval = F, echo = T, attr.source='.numberLines'}
+```{r}
+#| eval = F, echo = T, 
+#| attr.source='.numberLines'
 
 #* Echo back the input
 #* @param msg The message to echo
@@ -143,7 +140,6 @@ function(msg="") {
 }
 
 ```
-
 ::: 
 
 The code for the model function uses the same principles, but is much more developed. There are three parameter inputs:
@@ -154,7 +150,10 @@ The code for the model function uses the same principles, but is much more devel
 
 The function sources the model functions from GitHub, obtains the model parameter data from within the API, and then overwrites the rows of the parameter updates that exist in *param_updates*. It then runs the model functions using the updated parameters, post-processes the results, checks that no sensitive data is included in the results, and then returns a data-frame of results. This entire process occurs on the server on which the API is hosted, with inputs and outputs passed to the API over the web in JSON format. 
 
-```{r, file='../darthAPI/plumber.R', eval = F, echo = T, class.source = 'fold-hide'}
+```{r}
+#| file='../darthAPI/plumber.R',
+#| eval = F, echo = T,
+#| attr.source='.numberLines'
 ```
 
 #### Deploying an API
@@ -178,7 +177,10 @@ The *content* function attempts to determine the correct format for the output f
 
 The script then then goes on to save the data and generate a PDF report from the outputs using the RMarkdown package [@rmarkdown2020citation], the code for which can be found [here](https://github.com/RobertASmithBresMed/plumberHE/blob/main/report/darthReport.Rmd). The markdown report uses functions adapted from the [*darkpeak*](https://github.com/dark-peak-analytics/darkpeak) R package.   
 
-```{r, file='../scripts/run_darthAPI.R',eval = F, echo = T}
+```{r}
+#| file='../scripts/run_darthAPI.R',
+#| eval = F, echo = T, 
+#|attr.source='.numberLines'
 ```
 
 #### Use GitHub actions to automate the process
@@ -187,7 +189,10 @@ Once the API is created and hosted online, it can be called any time. The advant
 
 In the example below we show how a GitHub Actions (other providers available) workflow can be used to automate an update to a health economic evaluation [@chandrasekara2021introduction]. The workflow runs at 0:01AM on the first day of every month. It first clones the GitHub repository on a GitHub actions Windows 2019 server, then installs the necessary dependencies, before running the script described above to generate the model report. It creates a pull request to the repo with this new updated report. If GitHub is not the preferred location of report storage, it is possible to send the report via email or save to cloud storage solutions such as Google Drive or Dropbox.
 
-```{r, file='../.github/workflows/auto_model_run.yml',eval = F, echo = T}
+```{r}
+#| file='../.github/workflows/auto_model_run.yml',
+#| eval = F, echo = T, 
+#| attr.source='.numberLines'
 ```
 
 ## Discussion
@@ -220,3 +225,30 @@ A recent working paper by @adibi2022programmable has provided a similar call to 
 ## Conclusions
 
 This example framework, with accompanying open source code base, demonstrates that it is possible, within a HEOR setting, to separate the health economic model from the data, and automate the main steps of the analysis pipeline. We believe this is the first application of this procedure for a HEOR project, and is certainly the first example to be made open source for the benefit of the wider community. We hope that this framework will improve the transparency of health economic models, reduce the cost & administrative burden of updating models, and increase the speed at which updates can occur.
+
+## Author contributions
+
+R.S. & P.S. developed the original concept, R.S. wrote the source code & the original article. W.M. & P.S. reviewed both the source code and article. All errors are the fault of R.S.
+
+## Competing interests
+
+R.S., P.S. & W.M have no competing interests to declare.
+
+## Grant information
+
+R.S., P.S. & W.M. are joint funded by the Wellcome Trust Doctoral Training Centre in Public Health Economics and Decision Science [108903] and the University of Sheffield.
+
+*The funders had no role in study design, data collection and analysis, decision to publish, or preparation of the manuscript.*
+
+## Software availability
+
+Source code is available on GitHub at **Insert Final GitHub repo Link**. 
+
+Archived source code at the time of publication can be found at **Insert Zenodo Link**.
+
+Licence: MIT
+
+## Acknowledgements
+
+We would like to thank the participants at R-HTA Oxford, Richard Birnie and Dawn Lee for feedback on the original concept and manuscript. All errors are the fault of the authors.
+
