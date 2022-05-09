@@ -112,12 +112,14 @@ There are lots of different implementations of APIs, but the main focus of this 
 
 In the examples below we use JSON to pass information to and from our API.
 
-::: {.tiny}
+\tiny
+
 ```{r}
 #| file='../R/darth_funcs.R', 
 #| eval = F, echo = F
 ```
-:::
+
+\normalsize
 
 #### Plumber
 
@@ -127,10 +129,12 @@ The code below give an example function which echos a message. The function take
 
 The API can be called using any type of request, the below shows and example of the 'GET' request (the default for web-browsers).
 
-::: {.tiny}
+\tiny
+
 ```{r}
 #| eval = F, echo = T, 
-#| attr.source='.numberLines'
+#| attr.source='.numberLines',
+#| fig.cap = "Example plumber function used to create an API which returns a message"
 
 #* Echo back the input
 #* @param msg The message to echo
@@ -140,7 +144,8 @@ function(msg="") {
 }
 
 ```
-::: 
+
+\normalsize
 
 The code for the model function uses the same principles, but is much more developed. There are three parameter inputs:
 
@@ -150,11 +155,16 @@ The code for the model function uses the same principles, but is much more devel
 
 The function sources the model functions from GitHub, obtains the model parameter data from within the API, and then overwrites the rows of the parameter updates that exist in *param_updates*. It then runs the model functions using the updated parameters, post-processes the results, checks that no sensitive data is included in the results, and then returns a data-frame of results. This entire process occurs on the server on which the API is hosted, with inputs and outputs passed to the API over the web in JSON format. 
 
+\tiny
+
 ```{r}
 #| file='../darthAPI/plumber.R',
 #| eval = F, echo = T,
 #| attr.source='.numberLines'
+
 ```
+
+\normalsize
 
 #### Deploying an API
 
@@ -175,13 +185,18 @@ We use the *POST* function from the *httr* package to query the API [@httr2020ci
 
 The *content* function attempts to determine the correct format for the output from the API based upon the content type. This function ensures that the results object is a dataframe.
 
-The script then then goes on to save the data and generate a PDF report from the outputs using the RMarkdown package [@rmarkdown2020citation], the code for which can be found [here](https://github.com/RobertASmithBresMed/plumberHE/blob/main/report/darthReport.Rmd). The markdown report uses functions adapted from the [*darkpeak*](https://github.com/dark-peak-analytics/darkpeak) R package.   
+The script then then goes on to save the data and generate a PDF report from the outputs using the RMarkdown package [@rmarkdown2020citation], the code for which can be found [here](https://github.com/RobertASmithBresMed/plumberHE/blob/main/report/darthReport.Rmd). The markdown report uses functions adapted from the [*darkpeak*](https://github.com/dark-peak-analytics/darkpeak) R package. 
+
+\tiny
 
 ```{r}
 #| file='../scripts/run_darthAPI.R',
 #| eval = F, echo = T, 
-#|attr.source='.numberLines'
+#| attr.source='.numberLines'
+
 ```
+
+\normalsize
 
 #### Use GitHub actions to automate the process
 
@@ -189,11 +204,16 @@ Once the API is created and hosted online, it can be called any time. The advant
 
 In the example below we show how a GitHub Actions (other providers available) workflow can be used to automate an update to a health economic evaluation [@chandrasekara2021introduction]. The workflow runs at 0:01AM on the first day of every month. It first clones the GitHub repository on a GitHub actions Windows 2019 server, then installs the necessary dependencies, before running the script described above to generate the model report. It creates a pull request to the repo with this new updated report. If GitHub is not the preferred location of report storage, it is possible to send the report via email or save to cloud storage solutions such as Google Drive or Dropbox.
 
+\tiny
+
 ```{r}
 #| file='../.github/workflows/auto_model_run.yml',
 #| eval = F, echo = T, 
 #| attr.source='.numberLines'
+
 ```
+
+\normalsize
 
 ## Discussion
 
