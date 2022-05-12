@@ -1,0 +1,16 @@
+---
+title: Living HEOR, Automating HTA with R
+author: Robert A Smith ^[Lumanity, Sheffield] ^[Dark Peak Analytics, Sheffield] ^[School of Health and Related Research, University of Sheffield] ^[rasmith3@sheffield.ac.uk], Paul P Schneider <sup>2</sup> <sup>3</sup>, and Wael Mohammed <sup>2</sup> <sup>3</sup>.
+abstract: |   
+  **Background** The process of updating economic models is time-consuming and expensive, and often involves the transfer of sensitive data between parties. Here, we demonstrate how HEOR can be conducted in a way that allows clients to retain full control of their data, while automating reporting as new information becomes available. 
+  
+  **Method** We developed an automated analysis and reporting pipeline for health economic modelling and made the source code openly available on a [GitHub](https://github.com/RobertASmithBresMed/plumberHE) repository. It consists of three parts: An economic model is constructed by the consultant using pseudo data (i.e. random data, which has the same format as the real data). On the client side, an application programming interface (API), generated using the R package plumber, is hosted on a server. An automated workflow is created. This workflow sends the economic model to the client API. The model is then run within the client server. The results are sent back to the consultant, and a (PDF) report is automatically generated using RMarkdown. This API hosts all sensitive data, so that data does not have to be provided to the consultant. 
+  
+  **Results & Discussion** The method is relatively complex, and requires a strong understanding of R, APIs, RMarkdown and GitHub Actions. However, the end result is a process, which allows the consultant to conduct health economic (or any other) analyses on client data, without having direct access – the client does not need to share their sensitive data. The workflow can be scheduled to run at defined time points (e.g. monthly), or when triggered by an event (e.g. an update to the underlying data or model code). Results are generated automatically and wrapped into a full report. Documents no longer need to be revised manually.
+
+  **Conclusions** This example demonstrates that it is possible, within a HEOR setting, to separate the health economic model from the data, and automate the main steps of the analysis pipeline. We believe this is the first application of this procedure for a HEOR project.
+  
+keywords: |
+   `HEOR`, `HTA`, `APIs`, `R`, `Plumber`.
+
+---
