@@ -74,6 +74,11 @@ httr::content(
 
 ```
 
+## Example App
+
+An example app can be found in the `app files` folder. This contains a very simple R shiny application which allows users to query the API for different variable inputs.
+
+
 ## Creating the automated workflow
 
 The automated workflow is run on GitHub actions at 00:01 at the first of each month, and can be found in `.github/workflows/auto_model_run.yml`.
