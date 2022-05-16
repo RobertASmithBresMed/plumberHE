@@ -47,7 +47,8 @@ server <- function(input, output) {
         # code is passed to the client API from GitHub.
         query = list(model_functions = "https://raw.githubusercontent.com/BresMed/plumberHE/main/R/darth_funcs.R"),
         # set of parameters to be changed ... we are allowed to change these but not some others...
-        body = jsonlite::toJSON(df_input),
+        body = list(
+          param_updates = jsonlite::toJSON(df_input)),
         # we include a key here to access the API ... like a password protection
 
         config = httr::add_headers(Authorization = paste0("Key ", 
