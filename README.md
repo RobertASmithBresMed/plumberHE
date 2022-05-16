@@ -2,7 +2,7 @@ This repository was created for the [R-HTA](https://r-hta.org/) workshop, held i
 
 # **Automating a living health economic evaluation with GitHub Actions & Plumber APIs**
 
-Robert Smith<sup>1,2,3</sup> &  Paul Schneider<sup>2,3</sup> 
+Robert Smith<sup>1,2,3</sup>,   [Paul Schneider](pschneider@darkpeakanalytics.com)<sup>2,3</sup> & Wael Mohammed<sup>2,3</sup>
 
 <sup>1</sup> [Lumanity](https://lumanity.com/), Sheffield, UK    
 <sup>2</sup> [University of Sheffield](https://www.sheffield.ac.uk/scharr), University of Sheffield, Sheffield, UK    
@@ -83,6 +83,3 @@ An example app can be found in the `app files` folder. This contains a very simp
 
 The automated workflow is run on GitHub actions at 00:01 at the first of each month, and can be found in `.github/workflows/auto_model_run.yml`.
 
-### List of contributors
-- [RobertASmith](Robert.Smith@lumanity.com)
-- [Paul Schneider](pschneider@darkpeakanalytics.com)
