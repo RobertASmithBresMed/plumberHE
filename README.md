@@ -1,3 +1,5 @@
+[![DOI](https://zenodo.org/badge/481174680.svg)](https://zenodo.org/badge/latestdoi/481174680)
+
 This repository was created for the [R-HTA](https://r-hta.org/) workshop, held in Oxford on Thursday 19th May 2022. 
 
 # **Automating a living health economic evaluation with GitHub Actions & Plumber APIs**
