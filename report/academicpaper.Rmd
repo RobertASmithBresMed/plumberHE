@@ -1,5 +1,5 @@
 ---
-title: Living HEOR, Automating HTA with R
+title: Living HTA, Automating HTA with R
 author:
   - name: Robert A Smith
     affil: 
