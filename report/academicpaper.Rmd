@@ -25,17 +25,24 @@ address:
     address: Dark Peak Analytics, Sheffield
   - code: 3
     address: School of Health and Related Research, University of Sheffield
-abstract: |   
-
+abstract: |     
+  
   **Background** 
-  Requiring access to sensitive (e.g. patient level or product price) data can be a significant obstacle for the development of health models.  Security and privacy are important concerns when transferring sensitive data between parties . Here, we demonstrate how HEOR can be conducted in a way that allows clients to retain full control of their data, while automating reporting as new information becomes available. 
+    
+  Requiring access to sensitive data can be a significant obstacle for the development of health models in the Health Economics & Outcomes Research (HEOR) setting. We demonstrate how health economic evaluation can be conducted with minimal transfer of data between parties, while automating reporting as new information becomes available. 
   
-  **Method** We developed an automated analysis and reporting pipeline for health economic modelling and made the source code openly available on a [GitHub](https://github.com/RobertASmithBresMed/plumberHE) repository. The pipeline consists of three parts: An economic model is constructed by the consultant using pseudo data (i.e. random data, which has the same format as the real data). On the client side, an application programming interface (API), generated using the R package plumber, is hosted on a server. An automated workflow is created. This workflow sends the economic model to the client API. The model is then run within the client server. The results are sent back to the consultant, and a (PDF) report is automatically generated using RMarkdown. This API hosts all sensitive data, so that data does not have to be provided to the consultant. 
+  **Method**   
+  We developed an automated analysis and reporting pipeline for health economic modelling and made the source code openly available on a [GitHub](https://github.com/RobertASmithBresMed/plumberHE) repository. The pipeline consists of three parts: An economic model is constructed by the consultant using pseudo data. On the data-owner side, an application programming interface (API) is hosted on a server. This API hosts all sensitive data, so that data does not have to be provided to the consultant. An automated workflow is created, which calls the API, retrieves results, and generates a report. 
   
-  **Results & Discussion** 
-  The application of modern data science tools and practices (R, APIs, RMarkdown and GitHub Actions) allows the consultant to conduct health economic (or any other) analyses on client data, without having direct access – the client does not need to share their sensitive data. In addition, the entire workflow can be largely automated: the analysis can be scheduled to run at defined time points (e.g. monthly), or when triggered by an event (e.g. an update to the underlying data or model code); results can be generated automatically and then be exported into a report. Documents no longer need to be revised manually.
+  **Results & Discussion**
+     
+  The application of modern data science tools and practices allows analyses of data without the need for direct access – negating the need to send sensitive data. In addition, the entire workflow can be largely automated: the analysis can be scheduled to run at defined time points (e.g. monthly), or when triggered by an event (e.g. an update to the underlying data or model code); results can be generated automatically and then be exported into a report. Documents no longer need to be revised manually.
+  
+  **Conclusions**
+     
+  This example demonstrates that it is possible, within a HEOR setting, to separate the health economic model from the data, and automate the main steps of the analysis pipeline.
 
-  **Conclusions** This example demonstrates that it is possible, within a HEOR setting, to separate the health economic model from the data, and automate the main steps of the analysis pipeline.   
+     
 keywords: |
    `HEOR`, `HTA`, `APIs`, `R`, `Plumber`.
 date: "`r Sys.Date()`"
@@ -60,11 +67,19 @@ knitr::opts_chunk$set(echo = TRUE, size = "tiny")
 
 ## Introduction
 
-The development of economic models generally involves the transfer of sensitive data (e.g. individual patient or price data) between parties. This paper demonstrates how the use of APIs allows clients in the Health Economics & Outcomes Research (HEOR) industry to collaborate with multiple partners on health economic decision models, while,retaining full control of their data. The use of an API furthermore makes it possible to streamline and automate reporting as new information becomes available, significantly reducing the financial and administrative burden of economic model updates.
+The development of economic models generally involves the transfer of sensitive data (e.g. individual patient or price data) between parties. This paper demonstrates how the use of application programming interfaces (API) allows data-owners in the Health Economics & Outcomes Research (HEOR) industry to collaborate with multiple partners on health economic decision models, while, retaining full control of their data. The use of an API furthermore makes it possible to streamline and automate reporting as new information becomes available, significantly reducing the financial and administrative burden of economic model updates.
 
-A recent publication by @adibi2022programmable describes a cloud-based model accessibility platform for models developed in R. The authors make the case for cloud based platforms to improve the accessibility, transparency and standardization of health economic models, particularly highlighting the benefits of hosting computationally burdensome models on remote servers. The authors outline a framework for hosting models, contained within R packages, which are run using calls to an Application Program Interface (API). A set of standardized model call functions provide the user of the API with enough information to pass the necessary parameters to the model, run the model, and retrieve the necessary results directly into an R session. The publication is the first, to our knowledge, to discuss the enormous implications that remote model hosting could have in the HEOR industry.
+To our knowledge this is the first publication to outline a process for automated reporting in HEOR, which we term Living HTA, and the first to demonstrate the process of sending health economic model algorithms to sensitive data using APIs. 
 
-We take this approach one step further, providing an open-source code base which demonstrates the ease at which APIs can be deployed on data servers to avoid the need to share sensitive data. In short, we propose that companies, with support from health economists, host their own model accessibility platforms. Our hope is that providing these materials will encourage others to use these, relatively new methods, to improve the transparency, accessibility and efficiency of health economic models.
+Two other bodies of work are particularly relevant. The first is the OpenSafely initiative, which inspired this work. @williamson2020factors describe the OpenSafely interface [https://opensafely.org/](https://opensafely.org/), which was developed to analyse electronic health records data without the need to share confidential patient information:
+
+> "secure software interface that allows detailed pseudonymized primary care patient records to be analysed in near-real time where they already reside - hosted within the highly secure data centre of the electronic health records vendor — to minimize the reidentification risks when data are transported off-site".
+
+The method described in this paper has a similar objective, but aims to protect sensitive information in the HEOR sector.
+
+The second work, a publication by @adibi2022programmable, describes a cloud-based model accessibility platform for models developed in R. The authors make the case for cloud based platforms to improve the accessibility, transparency and standardization of health economic models, particularly highlighting the benefits of hosting computationally burdensome models on remote servers. The authors outline a framework for hosting models, contained within R packages, which are run using calls to an API. A set of standardized model call functions provide the user of the API with enough information to pass the necessary parameters to the model, run the model, and retrieve the necessary results directly into an R session. The publication is the first, to our knowledge, to discuss the enormous implications that remote model hosting could have in the HEOR industry.
+
+We combine elements from both @adibi2022programmable and the OpenSafely initiative, and provide an open-source code base which demonstrates the ease at which APIs can be deployed on data servers to avoid the need to share sensitive data. In short, we propose that data owners (e.g. pharmaceutical companies or governments), with support from health economists, host their own model accessibility platforms. Our hope is that providing these materials will encourage others to use these methods to improve the transparency, accessibility and efficiency of health economic models.
 
 ## Method
 
@@ -72,9 +87,9 @@ We developed an automated analysis and reporting pipeline for health economic mo
 
 * An economic model. The model can initially be developed using pseudo data – that is  randomly generated data, which has the same format as the actual data, but does not contain any sensitive information. 
 
-* An application programming interface (API). The API is hosted on the company or data provider side. It can be generated using the R package plumber. An automated workflow is created. This workflow sends the economic model to the company API. The model is then run within the company server. The results are sent back to the consultant, and a (PDF) report is automatically generated using RMarkdown. This API server hosts all sensitive data, so that data does not have to be provided to other project partners.
+* An API, hosted on the company or data provider side. It can be generated using the R package plumber. An automated workflow is created. This workflow sends the economic model to the company API. The model is then run within the company server. The results are sent back to the consultant, and a (PDF) report is automatically generated using RMarkdown. This API server hosts all sensitive data, so that data does not have to be provided to other project partners.
 
-* All of these processes can be controlled with a web-based user-interface. We provide an example user-interface built in the R shiny package, based on the tutorial application in our previous paper [@smith2020making]  [@shiny2021]. This application allows users to select input parameters with which to query the API, and view the results. This allows non-technical stakeholders to interact with the model in real time, while allowing the company to retain control of the data. The application will always reflect the data on the company server, and the model hosted by the consultant at the time of use.
+* All of these processes can be controlled with a web-based user-interface. We provide an example user-interface built in the R shiny package [@shiny2021], based on the tutorial application in our previous paper [@smith2020making]. This application allows users to select input parameters with which to query the API, and view the results. This allows non-technical stakeholders to interact with the model in real time, while allowing the company to retain control of the data. The application will always reflect the data on the company server, and the model hosted by the consultant at the time of use.
 
 ```{r}
 #| echo=FALSE, out.width="90%", 
@@ -86,7 +101,7 @@ All of the methods  discussed in this paper, as well as the code for the demonst
 
 ### 1. The economic model
 
-This model code has been adapted from the DARTH group's open source Cohort state-transition model (the Sick-Sicker Model) which is discussed in @alarid2021tutorial. The code includes several functions, but for the purpose of this example we can treat the model as a black box, as a single function called *run_model* which runs the DARTH Sick Sicker model. The *run_model* function takes a single argument, *psa_inputs*, which is a data-frame containing Probabilistic Sensitivity Analysis parameter inputs for the model variables that are allowed to vary. 
+This model code has been adapted from the DARTH group's open source Cohort state-transition model (the Sick-Sicker Model) which is discussed in @alarid2021tutorial with open source code available online [@fernando_alarid_escudero_2022_6400119]. The code includes several functions, but for the purpose of this example we can treat the model as a black box, as a single function called *run_model* which runs the DARTH Sick Sicker model. The *run_model* function takes a single argument, *psa_inputs*, which is a data-frame containing Probabilistic Sensitivity Analysis parameter inputs for the model variables that are allowed to vary. 
 
 The data-frame has four columns:
 
@@ -233,22 +248,23 @@ The framework described has a number of benefits.
 
 * Separating the data from the model has significantly improved the transparency of the health economic model. Allowing others to critique methods & hidden structural assumptions, test the code and identify bugs should improve the quality of models in the long run. It also enables the pool of people working on developing the health economic model and accompanying user-interface to be widened, without concern for confidentiality & data security. For example a shiny application could be developed for a model built under this framework without the programmer needing access to any sensitive data or information.
 
-* The computational burden of the model is handled on a remote server. The power of these servers is typically considerably greater than that of a typical laptop, speeding up model run time considerably. This is likely to be especially important for models that incorporate uncertainty through monte-carlo sampling algorithms which can be parallelized on machines with multiple cores @parallelmanual2020, for example probabilistic one way sensitivity analysis [@mccabe2020one] or partial expected value of perfect information [@brennan2007calculating]. 
+* The computational burden of the model is handled on a remote server. The power of these servers is typically considerably greater than that of a typical laptop, speeding up model run time considerably. This is likely to be especially important for models that incorporate uncertainty through monte-carlo sampling algorithms which can be parallelized on machines with multiple cores [@parallelmanual2020], for example probabilistic one way sensitivity analysis [@mccabe2020one] or partial expected value of perfect information [@brennan2007calculating]. 
 
 * The use of APIs to perform distinct tasks can improve interoperability within the field of health economics. Different modules, or tasks within a modelling framework can be written in different languages (e.g. R, Python, Julia & C++) and linked using APIs. This is likely to improve collaboration between different sub-disciplines, which often use different languages (e.g. health economists in R and data-scientists in Python).
 
 * API calls can be made at any time, and will always reflect the data held by the company. In many cases these datasets are updated regularly, allowing companies, and other stakeholders, to see the results of the decision model based on the most up to date data, without needing human intervention to: send new datasets, re-run analysis, write a report, and provide that report in a suitable format for the company. Automating model updates at set schedules, or when data is updated, may be invaluable where data is updated regularly, as has been the case throughout the COVID-19 pandemic.
+
 * Any model can be passed to the API, as long as the inputs and outputs to the model meet the requirements of the API. This means that multiple health economic models could be passed to the API, to be run using the data on the company server, and compared to account for structural uncertainty. 
 
 However, the framework has a number of limitations: 
 
-* Firstly, the method is relatively complex, and requires a strong understanding of health economic modelling in R, API creation and hosting, RMarkdown or other automated reporting packages, and GitHub Actions. While we hope that this paper provides a useful resource to health economists seeking to utilise these methods, the bulk of the industry still operates in MS Excel. Providing tuition to upskill health economists, or creating teams consisting of both health economists and data-scientists & software engineers may mediate this limitation somewhat. The [R for HTA consortium](https://r-hta.org/) has the potential to play a crucial role in upskilling the industry.
+* Firstly, the method is relatively complex, and requires a strong understanding of health economic modelling in R, API creation and hosting, RMarkdown or other automated reporting packages, and GitHub Actions. While we hope that this paper provides a useful resource to health economists seeking to utilise these methods, the bulk of the industry still operates in MS Excel [@incerti2019r]. Providing tuition to upskill health economists, or creating teams consisting of both health economists and data-scientists & software engineers may mediate this limitation somewhat. Groups like the [R for HTA consortium](https://r-hta.org/) has the potential to play a crucial role in upskilling the industry.
 
 * There are still likely to be concerns about data security, even with the authentication procedures built in to the API functionality. Collaboration with experts in this field may mediate this significantly, since there is no fundamental reason why health data is any more sensitive, or vulnerable, than the plethora of other data (including banking data) that relies on APIs every day. It will be important to reassure companies that the use of APIs is likely to reduce, not increase the risk of data breaches, and that every interaction with the data can be logged. 
 
-* There is a risk that running the model remotely will result in the perception that the model is a 'black box'. The use of user-interfaces (such as those increasingly being created in shiny) to interrogate the model, as well as the increased transparency associated with being able to share code on sites such as GitHub, should reassure stakeholders that this framework is more transparent than the existing spreadsheet based solutions.
+* There is a risk that running the model remotely will result in the perception that the model is a 'black box'. The use of user-interfaces (such as those increasingly being created in shiny) to interrogate the model, as well as the increased transparency associated with being able to share code on sites such as GitHub, should reassure stakeholders that this framework is more transparent than the existing spreadsheet based solutions [@pouwels2022opportunities].
 
-* Often, when building a model, it is helpful to have the underlying data to be able to investigate the data, often through the generation of descriptive statistics. The process of sharing pseudo-data enables modellers to ensure that the models they create conform to the structure of the data input. However, the modeller still needs to be able to write code that is versatile enough to cope with data with unknown distributions & ranges. Code that will not break when the number of observations changes, or when the range or distribution of a variable changes. This is easily solved, again by improved training and the use of standard packages.   
+* Often, when building a model, it is helpful to have the underlying data to be able to investigate the data, often through the generation of descriptive statistics. The process of sharing pseudo-data enables modellers to ensure that the models they create conform to the structure of the data input. However, the modeller still needs to be able to write code that is versatile enough to cope with data with unknown distributions & ranges. Code that will not break when the number of observations changes, or when the range or distribution of a variable changes. This is easily solved, again by improved training and the use of standard packages such as *hesim* and *heemod* [@incerti2021hesim; @filipovic2016markov].   
 
 The recent working paper by @adibi2022programmable has provided a similar call to action, extolling the virtues of the API for decision modelling, and showing how APIs can be used to shift much of the computational burden away from those querying models, making models more accessible. However, there are several limitations to this brilliant paper. Firstly, while the authors outline a framework for making models more transparent and accessible, and describe how they have done this for a number of models using the PRISM server, they do not provide instruction on how to replicate this process. Additionally, while the authors state that “A practical model accessibility platform should be able to protect confidential information such as patient data and confidential pricing” (p6), the framework as described would require companies to give the owners of the model accessibility platform access to their confidential data, or else host the model accessibility platform themselves. 
 
@@ -274,7 +290,7 @@ R.S., P.S. & W.M. are jointly funded by the Wellcome Trust Doctoral Training Cen
 
 ## Software availability
 
-Source code is available on GitHub **Insert Final GitHub repo Link**. 
+Source code is available on GitHub at this link: *[https://github.com/RobertASmithBresMed/plumberHE](https://github.com/RobertASmithBresMed/plumberHE)**. 
 
 Archived source code at the time of publication can be found at **10.5281/zenodo.6556887**.
 
