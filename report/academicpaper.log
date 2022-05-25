@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.5.14)  19 MAY 2022 12:10
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.5.14)  25 MAY 2022 09:48
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -974,182 +974,212 @@ Underfull \hbox (badness 10000) in paragraph at lines 102--107
 LaTeX Font Info:    Font shape `OT1/phv/m/n' will be
 (Font)              scaled to size 8.82996pt on input line 109.
 
-Overfull \hbox (83.29239pt too wide) in paragraph at lines 109--148
+Overfull \hbox (83.29239pt too wide) in paragraph at lines 109--146
 [] $[]$ 
  []
 
 LaTeX Font Info:    Font shape `T1/mdbch/m/n' will be
-(Font)              scaled to size 13.82408pt on input line 149.
+(Font)              scaled to size 13.82408pt on input line 147.
 LaTeX Font Info:    Font shape `OT1/phv/b/n' will be
-(Font)              scaled to size 12.71512pt on input line 149.
+(Font)              scaled to size 12.71512pt on input line 147.
 LaTeX Font Info:    Font shape `T1/mdbch/m/fsc' will be
-(Font)              scaled to size 9.60007pt on input line 153.
+(Font)              scaled to size 9.60007pt on input line 151.
 <WellcomeOR_logo_black.pdf, id=57, 275.0275pt x 24.09pt>
 File: WellcomeOR_logo_black.pdf Graphic file (type pdf)
 <use WellcomeOR_logo_black.pdf>
-Package pdftex.def Info: WellcomeOR_logo_black.pdf  used on input line 153.
+Package pdftex.def Info: WellcomeOR_logo_black.pdf  used on input line 151.
 (pdftex.def)             Requested size: 136.99722pt x 12.0pt.
 LaTeX Font Info:    Font shape `T1/mdbch/m/n' will be
-(Font)              scaled to size 7.68005pt on input line 153.
+(Font)              scaled to size 7.68005pt on input line 151.
 [1{c:/Users/rsmith/AppData/Roaming/TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
 
 
  <./WellcomeOR_logo_black.pdf>]
 LaTeX Font Info:    Font shape `T1/mdbch/m/n' will be
-(Font)              scaled to size 11.52008pt on input line 158.
+(Font)              scaled to size 11.52008pt on input line 156.
 LaTeX Font Info:    Font shape `OT1/phv/b/n' will be
-(Font)              scaled to size 10.59595pt on input line 158.
+(Font)              scaled to size 10.59595pt on input line 156.
 
-Underfull \hbox (badness 2547) in paragraph at lines 197--199
+Underfull \hbox (badness 2547) in paragraph at lines 219--221
 []\T1/mdbch/m/n/10 We de-vel-oped an au-to-mated anal-y-sis and re-port-ing
  []
 
-LaTeX Font Info:    Trying to load font information for TS1+mdbch on input line 202.
+LaTeX Font Info:    Trying to load font information for TS1+mdbch on input line 224.
 (c:/Users/rsmith/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/mathdesign/mdbch/ts1mdbch.fd
 File: ts1mdbch.fd 2013/08/29 Fontinst v1.933 font definitions for TS1/mdbch.
 )
 LaTeX Font Info:    Font shape `TS1/mdbch/m/n' will be
-(Font)              scaled to size 9.60007pt on input line 202.
+(Font)              scaled to size 9.60007pt on input line 224.
 \openout4 = `academicpaper.fff'.
 
 (academicpaper.fff)
-Underfull \hbox (badness 1852) in paragraph at lines 231--234
+Underfull \hbox (badness 1852) in paragraph at lines 252--255
 \T1/mdbch/m/n/10 within an open ac-cess GitHub repos-i-tory []$\T1/cmtt/m/n/10 https : / /
  []
 
 LaTeX Font Info:    Font shape `T1/mdbch/m/it' will be
-(Font)              scaled to size 9.60007pt on input line 242.
+(Font)              scaled to size 9.60007pt on input line 264.
 
-Underfull \hbox (badness 2012) in paragraph at lines 254--257
+Underfull \hbox (badness 2012) in paragraph at lines 276--279
 []\T1/mdbch/m/it/10 distribution \T1/mdbch/m/n/10 - the dis-tri-bu-tion of that pa-ram-e-ter
  []
 
 File: WellcomeOR_logo_black.pdf Graphic file (type pdf)
 <use WellcomeOR_logo_black.pdf>
-Package pdftex.def Info: WellcomeOR_logo_black.pdf  used on input line 289.
+Package pdftex.def Info: WellcomeOR_logo_black.pdf  used on input line 282.
 (pdftex.def)             Requested size: 136.99722pt x 12.0pt.
 [2
 
 ]
-Underfull \hbox (badness 1163) in paragraph at lines 289--298
+Underfull \hbox (badness 1163) in paragraph at lines 311--320
 []\T1/mdbch/m/n/10 in sup-port-ing pro-gram-matic ac-cess. In con-trast
  []
 
 LaTeX Font Info:    Font shape `T1/mdbch/m/n' will be
-(Font)              scaled to size 4.80003pt on input line 338.
+(Font)              scaled to size 4.80003pt on input line 360.
 LaTeX Font Info:    Font shape `T1/mdbch/b/n' will be
-(Font)              scaled to size 9.60007pt on input line 343.
+(Font)              scaled to size 9.60007pt on input line 365.
 LaTeX Font Info:    Font shape `T1/cmtt/m/n' will be
-(Font)              scaled to size 5.36003pt on input line 367.
+(Font)              scaled to size 5.36003pt on input line 389.
 LaTeX Font Info:    Font shape `T1/cmtt/m/it' will be
-(Font)              scaled to size 5.36003pt on input line 368.
+(Font)              scaled to size 5.36003pt on input line 390.
 LaTeX Font Info:    Font shape `T1/cmtt/b/n' in size <5> not available
-(Font)              Font shape `T1/cmtt/bx/n' tried instead on input line 371.
+(Font)              Font shape `T1/cmtt/bx/n' tried instead on input line 393.
 LaTeX Font Info:    Font shape `T1/cmtt/bx/n' in size <5> not available
-(Font)              Font shape `T1/cmtt/m/n' tried instead on input line 371.
+(Font)              Font shape `T1/cmtt/m/n' tried instead on input line 393.
 LaTeX Font Info:    Font shape `T1/cmtt/m/n' will be
-(Font)              scaled to size 5.36003pt on input line 371.
-LaTeX Font Info:    Trying to load font information for TS1+cmtt on input line 372.
+(Font)              scaled to size 5.36003pt on input line 393.
+LaTeX Font Info:    Trying to load font information for TS1+cmtt on input line 394.
 (c:/Users/rsmith/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/base/ts1cmtt.fd
 File: ts1cmtt.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 )
-Underfull \hbox (badness 2057) in paragraph at lines 384--393
+Underfull \hbox (badness 2057) in paragraph at lines 406--415
 \T1/mdbch/m/n/10 model func-tions from soft-ware de-vel-op-ment web-site
  []
 
-LaTeX Font Info:    Font shape `T1/cmtt/b/it' in size <5> not available
-(Font)              Font shape `T1/cmtt/bx/it' tried instead on input line 398.
-LaTeX Font Info:    Font shape `T1/cmtt/bx/it' in size <5> not available
-(Font)              Font shape `T1/cmtt/m/it' tried instead on input line 398.
-LaTeX Font Info:    Font shape `T1/cmtt/m/it' will be
-(Font)              scaled to size 5.36003pt on input line 398.
 File: WellcomeOR_logo_black.pdf Graphic file (type pdf)
 <use WellcomeOR_logo_black.pdf>
-Package pdftex.def Info: WellcomeOR_logo_black.pdf  used on input line 471.
+Package pdftex.def Info: WellcomeOR_logo_black.pdf  used on input line 415.
 (pdftex.def)             Requested size: 136.99722pt x 12.0pt.
 [3]
-Underfull \hbox (badness 3029) in paragraph at lines 478--484
+LaTeX Font Info:    Font shape `T1/cmtt/b/it' in size <5> not available
+(Font)              Font shape `T1/cmtt/bx/it' tried instead on input line 420.
+LaTeX Font Info:    Font shape `T1/cmtt/bx/it' in size <5> not available
+(Font)              Font shape `T1/cmtt/m/it' tried instead on input line 420.
+LaTeX Font Info:    Font shape `T1/cmtt/m/it' will be
+(Font)              scaled to size 5.36003pt on input line 420.
+
+Underfull \hbox (badness 3029) in paragraph at lines 500--506
 [] []\T1/mdbch/b/n/10 2.2 De-ploy-ing an API[] \T1/mdbch/m/n/10 There are nu-mer-ous other
  []
 
 File: WellcomeOR_logo_black.pdf Graphic file (type pdf)
 <use WellcomeOR_logo_black.pdf>
-Package pdftex.def Info: WellcomeOR_logo_black.pdf  used on input line 672.
+Package pdftex.def Info: WellcomeOR_logo_black.pdf  used on input line 630.
 (pdftex.def)             Requested size: 136.99722pt x 12.0pt.
 [4]
-Underfull \hbox (badness 1173) in paragraph at lines 696--700
+Underfull \hbox (badness 1173) in paragraph at lines 718--722
 []\T1/mdbch/m/n/10 Firstly, no data needs to leave the data-owner's
  []
 
 File: WellcomeOR_logo_black.pdf Graphic file (type pdf)
 <use WellcomeOR_logo_black.pdf>
-Package pdftex.def Info: WellcomeOR_logo_black.pdf  used on input line 779.
+Package pdftex.def Info: WellcomeOR_logo_black.pdf  used on input line 783.
 (pdftex.def)             Requested size: 136.99722pt x 12.0pt.
 [5]
-Underfull \hbox (badness 4108) in paragraph at lines 820--829
+Underfull \hbox (badness 4108) in paragraph at lines 843--852
 []\T1/mdbch/m/n/10 This ex-am-ple frame-work, with ac-com-pa-ny-ing open
  []
 
-LaTeX Font Info:    Font shape `T1/mdbch/m/n' will be
-(Font)              scaled to size 8.64006pt on input line 871.
-(./academicpaper.bbl
-LaTeX Font Info:    Font shape `T1/mdbch/m/it' will be
-(Font)              scaled to size 8.64006pt on input line 13.
 
-Underfull \hbox (badness 1983) in paragraph at lines 10--14
-[]\T1/mdbch/m/n/9 Amin Adibi, Stephanie Har-vard, and Mohsen Sa-dat-
+Underfull \hbox (badness 5939) in paragraph at lines 878--880
+[]\T1/mdbch/m/n/10 Source code is avail-able on GitHub at this link:
  []
 
-LaTeX Font Info:    Font shape `T1/cmtt/m/n' will be
-(Font)              scaled to size 9.64806pt on input line 25.
-LaTeX Font Info:    Font shape `OT1/mdbch/m/n' will be
-(Font)              scaled to size 8.64006pt on input line 25.
-LaTeX Font Info:    Font shape `OT1/mdbch/m/n' will be
-(Font)              scaled to size 5.76004pt on input line 25.
-LaTeX Font Info:    Font shape `OML/mdbch/m/it' will be
-(Font)              scaled to size 8.64006pt on input line 25.
-LaTeX Font Info:    Font shape `OML/mdbch/m/it' will be
-(Font)              scaled to size 5.76004pt on input line 25.
-LaTeX Font Info:    Font shape `OMS/mdbch/m/n' will be
-(Font)              scaled to size 8.64006pt on input line 25.
-LaTeX Font Info:    Font shape `OMS/mdbch/m/n' will be
-(Font)              scaled to size 5.76004pt on input line 25.
-LaTeX Font Info:    Font shape `OMX/mdbch/m/n' will be
-(Font)              scaled to size 8.64006pt on input line 25.
-LaTeX Font Info:    Font shape `OMX/mdbch/m/n' will be
-(Font)              scaled to size 5.76004pt on input line 25.
-LaTeX Font Info:    Font shape `OML/mdbch/m/n' will be
-(Font)              scaled to size 8.64006pt on input line 25.
-LaTeX Font Info:    Font shape `OML/mdbch/m/n' will be
-(Font)              scaled to size 5.76004pt on input line 25.
-LaTeX Font Info:    Font shape `MDA/mdbch/m/n' will be
-(Font)              scaled to size 8.64006pt on input line 25.
-LaTeX Font Info:    Font shape `MDA/mdbch/m/n' will be
-(Font)              scaled to size 5.76004pt on input line 25.
-LaTeX Font Info:    Font shape `MDB/mdbch/m/n' will be
-(Font)              scaled to size 8.64006pt on input line 25.
-LaTeX Font Info:    Font shape `MDB/mdbch/m/n' will be
-(Font)              scaled to size 5.76004pt on input line 25.
 
-Underfull \hbox (badness 1253) in paragraph at lines 37--42
-\T1/mdbch/m/n/9 con-sis-tent map-ping be-tween json data and r ob-jects.
+Underfull \hbox (badness 10000) in paragraph at lines 878--880
+\T1/mdbch/m/n/10 *[]$\T1/cmtt/m/n/10 https : / / github . com / RobertASmithBresMed /
  []
 
-File: WellcomeOR_logo_black.pdf Graphic file (type pdf)
-<use WellcomeOR_logo_black.pdf>
-Package pdftex.def Info: WellcomeOR_logo_black.pdf  used on input line 42.
-(pdftex.def)             Requested size: 136.99722pt x 12.0pt.
-[6]) 
-AED: lastpage setting LastPage
 File: WellcomeOR_logo_black.pdf Graphic file (type pdf)
 <use WellcomeOR_logo_black.pdf>
 Package pdftex.def Info: WellcomeOR_logo_black.pdf  used on input line 892.
 (pdftex.def)             Requested size: 136.99722pt x 12.0pt.
-[7
+[6]
+LaTeX Font Info:    Font shape `T1/mdbch/m/n' will be
+(Font)              scaled to size 8.64006pt on input line 894.
+(./academicpaper.bbl
+LaTeX Font Info:    Font shape `T1/mdbch/m/it' will be
+(Font)              scaled to size 8.64006pt on input line 14.
 
-] AED endfloat: Processing end Figures and Tables (./academicpaper.fff
-<../app_files/www/process_diagram.png, id=203, 677.53125pt x 525.46312pt>
+Underfull \hbox (badness 10000) in paragraph at lines 10--15
+[]\T1/mdbch/m/n/9 Elizabeth J Williamson, Alex J Walker, Kr-ish-nan
+ []
+
+
+Underfull \hbox (badness 1297) in paragraph at lines 10--15
+\T1/mdbch/m/n/9 Bhaskaran, Seb Ba-con, Chris Bates, Car-o-line E Mor-
+ []
+
+
+Underfull \hbox (badness 1983) in paragraph at lines 18--22
+[]\T1/mdbch/m/n/9 Amin Adibi, Stephanie Har-vard, and Mohsen Sa-dat-
+ []
+
+LaTeX Font Info:    Font shape `T1/cmtt/m/n' will be
+(Font)              scaled to size 9.64806pt on input line 28.
+LaTeX Font Info:    Font shape `OT1/mdbch/m/n' will be
+(Font)              scaled to size 8.64006pt on input line 28.
+LaTeX Font Info:    Font shape `OT1/mdbch/m/n' will be
+(Font)              scaled to size 5.76004pt on input line 28.
+LaTeX Font Info:    Font shape `OML/mdbch/m/it' will be
+(Font)              scaled to size 8.64006pt on input line 28.
+LaTeX Font Info:    Font shape `OML/mdbch/m/it' will be
+(Font)              scaled to size 5.76004pt on input line 28.
+LaTeX Font Info:    Font shape `OMS/mdbch/m/n' will be
+(Font)              scaled to size 8.64006pt on input line 28.
+LaTeX Font Info:    Font shape `OMS/mdbch/m/n' will be
+(Font)              scaled to size 5.76004pt on input line 28.
+LaTeX Font Info:    Font shape `OMX/mdbch/m/n' will be
+(Font)              scaled to size 8.64006pt on input line 28.
+LaTeX Font Info:    Font shape `OMX/mdbch/m/n' will be
+(Font)              scaled to size 5.76004pt on input line 28.
+LaTeX Font Info:    Font shape `OML/mdbch/m/n' will be
+(Font)              scaled to size 8.64006pt on input line 28.
+LaTeX Font Info:    Font shape `OML/mdbch/m/n' will be
+(Font)              scaled to size 5.76004pt on input line 28.
+LaTeX Font Info:    Font shape `MDA/mdbch/m/n' will be
+(Font)              scaled to size 8.64006pt on input line 28.
+LaTeX Font Info:    Font shape `MDA/mdbch/m/n' will be
+(Font)              scaled to size 5.76004pt on input line 28.
+LaTeX Font Info:    Font shape `MDB/mdbch/m/n' will be
+(Font)              scaled to size 8.64006pt on input line 28.
+LaTeX Font Info:    Font shape `MDB/mdbch/m/n' will be
+(Font)              scaled to size 5.76004pt on input line 28.
+
+Underfull \hbox (badness 1496) in paragraph at lines 46--50
+\T1/mdbch/m/n/9 git/cohort-modeling-tutorial-intro: Sec-ond Zen-odo re-
+ []
+
+
+Underfull \hbox (badness 1253) in paragraph at lines 52--57
+\T1/mdbch/m/n/9 con-sis-tent map-ping be-tween json data and r ob-jects.
+ []
+
+
+Underfull \hbox (badness 2980) in paragraph at lines 125--129
+[]\T1/mdbch/m/n/9 A Filipovic-Pierucci, K Zarca, and I Durand-Zaleski.
+ []
+
+) 
+AED: lastpage setting LastPage
+File: WellcomeOR_logo_black.pdf Graphic file (type pdf)
+<use WellcomeOR_logo_black.pdf>
+Package pdftex.def Info: WellcomeOR_logo_black.pdf  used on input line 915.
+(pdftex.def)             Requested size: 136.99722pt x 12.0pt.
+[7] AED endfloat: Processing end Figures and Tables (./academicpaper.fff
+<../app_files/www/process_diagram.png, id=221, 677.53125pt x 525.46312pt>
 File: ../app_files/www/process_diagram.png Graphic file (type png)
 <use ../app_files/www/process_diagram.png>
 Package pdftex.def Info: ../app_files/www/process_diagram.png  used on input line 2.
@@ -1157,7 +1187,7 @@ Package pdftex.def Info: ../app_files/www/process_diagram.png  used on input lin
 )
 File: WellcomeOR_logo_black.pdf Graphic file (type pdf)
 <use WellcomeOR_logo_black.pdf>
-Package pdftex.def Info: WellcomeOR_logo_black.pdf  used on input line 892.
+Package pdftex.def Info: WellcomeOR_logo_black.pdf  used on input line 915.
 (pdftex.def)             Requested size: 136.99722pt x 12.0pt.
 [8 <../app_files/www/process_diagram.PNG>] (./academicpaper.aux)
 Package rerunfilecheck Info: File `academicpaper.out' has not changed.
@@ -1165,21 +1195,21 @@ Package rerunfilecheck Info: File `academicpaper.out' has not changed.
  )
 (\end occurred inside a group at level 1)
 
-### simple group (level 1) entered at line 871 ({)
+### simple group (level 1) entered at line 894 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 26340 strings out of 480260
- 491087 string characters out of 5892766
- 773908 words of memory out of 5000000
- 43698 multiletter control sequences out of 15000+600000
+ 26364 strings out of 480260
+ 491777 string characters out of 5892766
+ 773406 words of memory out of 5000000
+ 43716 multiletter control sequences out of 15000+600000
  539659 words of font info for 136 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 114i,15n,131p,474b,586s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 114i,15n,131p,474b,533s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <c:/Users/rsmith/AppData/Roaming/TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ectt0900.643pk> <c:/Users/rsmith/AppData/Roaming/TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/tctt0800.375pk> <c:/Users/rsmith/AppData/Roaming/TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ectt0800.402pk>{c:/Users/rsmith/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/ly1/texnansi.enc}{c:/Users/rsmith/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/base/8r.enc} <c:/Users/rsmith/AppData/Roaming/TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ectt1000.643pk><c:/Users/rsmith/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/bitstrea/charter/bchb8a.pfb><c:/Users/rsmith/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/bitstrea/charter/bchr8a.pfb><c:/Users/rsmith/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/bitstrea/charter/bchri8a.pfb><c:/Users/rsmith/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/mathdesign/mdbch/md-chb8t.pfb><c:/Users/rsmith/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/mathdesign/mdbch/md-chr8t.pfb><c:/Users/rsmith/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/mathdesign/mdbch/md-chri8t.pfb><c:/Users/rsmith/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb><c:/Users/rsmith/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb>
-Output written on academicpaper.pdf (8 pages, 837940 bytes).
+Output written on academicpaper.pdf (8 pages, 842508 bytes).
 PDF statistics:
- 427 PDF objects out of 1000 (max. 8388607)
- 218 compressed objects within 3 object streams
- 54 named destinations out of 1000 (max. 500000)
+ 451 PDF objects out of 1000 (max. 8388607)
+ 237 compressed objects within 3 object streams
+ 60 named destinations out of 1000 (max. 500000)
  119 words of extra memory for PDF output out of 10000 (max. 10000000)
 
