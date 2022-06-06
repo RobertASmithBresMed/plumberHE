@@ -5,10 +5,10 @@ This repository was created for the [R-HTA](https://r-hta.org/) workshop, held i
 
 # **Automating a living health economic evaluation with GitHub Actions & Plumber APIs**
 
-Robert Smith<sup>1,2,3</sup>, Paul Schneider<sup>2,3</sup> & Wael Mohammed<sup>2,3</sup>
+Robert Smith<sup>1,2,3</sup>, Paul Schneider<sup>1,3</sup> & Wael Mohammed<sup>1,3</sup>
 
-<sup>1</sup> [Lumanity](https://lumanity.com/), Sheffield, UK    
-<sup>2</sup> [University of Sheffield](https://www.sheffield.ac.uk/scharr), University of Sheffield, Sheffield, UK    
+<sup>1</sup> [University of Sheffield](https://www.sheffield.ac.uk/scharr), University of Sheffield, Sheffield, UK   
+<sup>2</sup> [Lumanity](https://lumanity.com/), Sheffield, UK    
 <sup>3</sup> [Dark Peak Analytics](https://darkpeakanalytics.com/), Sheffield, UK;
 
 >#### **Background**
