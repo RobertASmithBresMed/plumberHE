@@ -14,10 +14,14 @@ server <- function(input, output) {
   
   list_results <- eventReactive(input$runModel, {
     
-    # PS: error message when api key not provided? 
-    # Is the API/key supposed accessible to everyone?
-    if(Sys.getenv("CONNECT_KEY") == ""){
+    # error message when api key not provided 
+    if(input$apiKey == ""){
       shiny::showNotification(type = "error","Error: No API Key provided")
+      return(NULL)
+    }
+    # error message when api key too short 
+    if(nchar(input$apiKey) < 10){
+      shiny::showNotification(type = "error", "Are you sure, this API Key is very short")
       return(NULL)
     }
     
@@ -40,21 +44,21 @@ server <- function(input, output) {
     # run the model using the connect server API
     results <- httr::content(
       httr::POST(
-        # the Server URL can also be kept confidential, but will leave here for now 
+        # the Server URL can also be kept confidential, but will leave here for now
         url = "https://connect.bresmed.com",
         # path for the API within the server URL
         path = "rhta2022/runDARTHmodel",
         # code is passed to the client API from GitHub.
         query = list(model_functions = "https://raw.githubusercontent.com/BresMed/plumberHE/main/R/darth_funcs.R"),
         # set of parameters to be changed ... we are allowed to change these but not some others...
-        body = list(
-          param_updates = jsonlite::toJSON(df_input)),
+        body = list(param_updates = jsonlite::toJSON(df_input)),
         # we include a key here to access the API ... like a password protection
-
-        config = httr::add_headers(Authorization = paste0("Key ", 
-                                                          Sys.getenv("CONNECT_KEY")))
+        # this is entered in the UI
+        config = httr::add_headers(Authorization = paste0("Key ",
+                                                          input$apiKey))
       )
     )
+    
     # insert debugging message
     message("API returned results")
     

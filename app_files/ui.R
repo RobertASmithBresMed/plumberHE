@@ -92,7 +92,10 @@ ui <- fillPage(
       ),
       
       
-      
+      # API key
+      textInput(inputId = "apiKey",
+                label = "API Key",
+                placeholder = "abc_123"),
       
       
       # action button to run the model
