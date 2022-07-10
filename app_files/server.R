@@ -12,7 +12,11 @@ server <- function(input, output) {
   source("../report/makeCEPlane.R")
   source("../app_files/landing_div.R")
   
-  list_results <- eventReactive(input$runModel, {
+  x <- reactiveValues(API_checkerValue = NULL)
+  
+  shinyjs::disable(id = "runModel")
+  
+  observeEvent(input$checkAPI, {
     
     # error message when api key not provided 
     if(input$apiKey == ""){
@@ -24,6 +28,41 @@ server <- function(input, output) {
       shiny::showNotification(type = "error", "Are you sure, this API Key is very short")
       return(NULL)
     }
+    # overwrite this API checker value with the result from the API call to check the key...
+    x$API_checkerValue <- unlist(httr::content(
+      httr::GET(
+        # the Server URL can also be kept confidential, but will leave here for now
+        url = "https://connect.bresmed.com",
+        # path for the API within the server URL
+        path = "rhta2022/checkAPIkey",
+        # we include a key here to access the API ... like a password protection
+        config = httr::add_headers(Authorization = paste0("Key ",
+                                                          input$apiKey))
+      )
+    ))
+    # check the API....
+    if (isolate(x$API_checkerValue) == TRUE) {
+      # show message notifying user that the API KEY is correct
+      shiny::showNotification(type = "message", 
+                              "Success - You can now run the model")
+      # enable the run model button
+      shinyjs::enable(id = "runModel")
+      message("correct API key entered")
+      return(NULL)
+    } else{
+      shiny::showNotification(type = "error", 
+                              "API KEY is incorrect")
+      # disable the run model button 
+      shinyjs::disable(id = "runModel")
+      message("incorrect API key entered")
+      return(NULL)
+    }
+    
+  })
+
+  
+  
+  list_results <- eventReactive(input$runModel, {
     
     # convert inputs into a single data-frame to be passed to the API call
     df_input <- data.frame(
