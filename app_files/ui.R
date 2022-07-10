@@ -2,6 +2,8 @@ source("./landing_div.R")
 
 # Define UI for application that draws a histogram
 ui <- fillPage(
+  # enable shiny js to faciliate turning on/off of buttons
+  shinyjs::useShinyjs(),
   
   shiny::tags$head(
     tags$title(
@@ -93,13 +95,20 @@ ui <- fillPage(
       
       
       # API key
-      textInput(inputId = "apiKey",
-                label = "API Key",
-                placeholder = "abc_123"),
+      passwordInput(inputId = "apiKey",
+                    label = "API Key",
+                    placeholder = "abc_123"),
+      
+      # action button to run the model
+      actionButton(inputId = "checkAPI",
+                   label =  "Check the API", 
+                   class = "btn btn-primary btn-lg"),
       
       
       # action button to run the model
-      actionButton("runModel", "Run Model", class = "btn btn-primary btn-lg"),
+      actionButton(inputId = "runModel",
+                   label =  "Run Model", 
+                   class = "btn btn-primary btn-lg"),
       
     ),
     
