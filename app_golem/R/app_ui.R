@@ -57,7 +57,7 @@ app_ui <- function(request) {
       
       sidebar = dashboardSidebar(
         sidebarMenu(
-          id = "sidebarMenu",
+          id = "sidebar",
           menuItem(
             text = "Introduction",
             tabName = "intro"
@@ -173,7 +173,7 @@ app_ui <- function(request) {
               
               tags$a(
                 actionButton("code", "code", icon = icon("code")),
-                href = "https://google.com",
+                href = "https://github.com/RobertASmithBresMed/plumberHE/blob/main/report/academicpaper.pdf",
                 target = "_blank"
               ),
               tags$a(
@@ -186,9 +186,9 @@ app_ui <- function(request) {
         ),
         right = tagList(
           "By ",
-          tags$a("Robert", href = ""), ", ",
-          tags$a("Paul", href = ""),
-          "& ", tags$a("Zauad", href = "")
+          tags$a("Robert", href = "https://www.linkedin.com/in/robert-smith-53b28438/", target = "_blank"), ", ",
+          tags$a("Paul", href = "https://www.linkedin.com/in/paul-schneider-204345131/", target = "_blank"),
+          "& ", tags$a("Zauad", href = "https://bd.linkedin.com/in/zauad-shahreer", target = "_blank")
         )
       )
       
