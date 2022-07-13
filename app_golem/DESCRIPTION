@@ -1,0 +1,14 @@
+Package: livinghta
+Title: Living HTA - Demo Shiny App
+Version: 0.0.0.9000
+Authors@R: person('Zauad Shahreer', 'Abeer', email = 'shahreyar.abeer@gmail.com', role = c('cre', 'aut'))
+Description: This shiny app shows how the HE model works.
+License: MIT + file LICENSE
+Imports: 
+    config (>= 0.3.1),
+    golem (>= 0.3.2),
+    magrittr,
+    shiny (>= 1.7.1)
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 7.2.0
