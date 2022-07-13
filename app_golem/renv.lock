@@ -61,6 +61,20 @@
         "sys"
       ]
     },
+    "assertthat": {
+      "Package": "assertthat",
+      "Version": "0.2.1",
+      "Source": "CRAN",
+      "Repository": "CRAN",
+      "RemoteType": "standard",
+      "RemotePkgRef": "assertthat",
+      "RemoteRef": "assertthat",
+      "RemoteRepos": "https://cran.rstudio.com/",
+      "RemotePkgPlatform": "aarch64-apple-darwin20",
+      "RemoteSha": "0.2.1",
+      "Hash": "50c838a310445e954bc13f26f26a6ecf",
+      "Requirements": []
+    },
     "attachment": {
       "Package": "attachment",
       "Version": "0.2.5",
@@ -881,18 +895,6 @@
         "rlang"
       ]
     },
-    "livinghta": {
-      "Package": "livinghta",
-      "Version": "0.0.0.9000",
-      "Source": "unknown",
-      "Hash": "2c291dd2cd6bfbad49439374cfe9e260",
-      "Requirements": [
-        "config",
-        "golem",
-        "magrittr",
-        "shiny"
-      ]
-    },
     "magrittr": {
       "Package": "magrittr",
       "Version": "2.0.3",
@@ -1187,6 +1189,20 @@
         "xopen"
       ]
     },
+    "rematch": {
+      "Package": "rematch",
+      "Version": "1.0.1",
+      "Source": "CRAN",
+      "Repository": "CRAN",
+      "RemoteType": "standard",
+      "RemotePkgRef": "rematch",
+      "RemoteRef": "rematch",
+      "RemoteRepos": "https://cran.rstudio.com/",
+      "RemotePkgPlatform": "aarch64-apple-darwin20",
+      "RemoteSha": "1.0.1",
+      "Hash": "c66b930d20bb6d858cd18e1cebcfae5c",
+      "Requirements": []
+    },
     "rematch2": {
       "Package": "rematch2",
       "Version": "2.1.2",
@@ -1257,6 +1273,7 @@
       "Hash": "977cce19c029acc6d88a1c861f224819",
       "Requirements": [
         "R6",
+        "assertthat",
         "callr",
         "cli",
         "crayon",
@@ -1270,7 +1287,9 @@
         "processx",
         "rappdirs",
         "rcmdcheck",
+        "rematch",
         "tibble",
+        "uuid",
         "whoami",
         "withr"
       ]
@@ -1660,6 +1679,20 @@
       "Source": "Repository",
       "Repository": "CRAN",
       "Hash": "c9c462b759a5cc844ae25b5942654d13",
+      "Requirements": []
+    },
+    "uuid": {
+      "Package": "uuid",
+      "Version": "1.1-0",
+      "Source": "CRAN",
+      "Repository": "CRAN",
+      "RemoteType": "standard",
+      "RemotePkgRef": "uuid",
+      "RemoteRef": "uuid",
+      "RemoteRepos": "https://cran.rstudio.com/",
+      "RemotePkgPlatform": "aarch64-apple-darwin20",
+      "RemoteSha": "1.1-0",
+      "Hash": "f1cb46c157d080b729159d407be83496",
       "Requirements": []
     },
     "vctrs": {
