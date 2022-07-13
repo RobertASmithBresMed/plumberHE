@@ -12,28 +12,15 @@ app_server <- function(input, output, session) {
   
   r = reactiveValues(
     api_connected = FALSE,
-    api_key = NULL
+    api_key = NULL,
+    sidebar = NULL
   )
   
   mod_main_server("main", r)
   
-  observeEvent(input$introduction, {
-    showModal(
-      modalDialog(
-        id = 'intro_modal',
-        size = 'l',
-        title = "Introduction",
-        easyClose = FALSE,
-        footer = tagAppendAttributes(id = 'intro_button', modalButton(label = 'Done')),
-        fade = TRUE,
-        
-        fluidRow(
-          tags$iframe(src="www/academic_paper.pdf", 
-                      width="1200", 
-                      height="500")
-        )
-      )
-    )
+  observeEvent(input$sidebar, {
+    req(input$sidebar)
+    r$sidebar = input$sidebar
   })
   
  

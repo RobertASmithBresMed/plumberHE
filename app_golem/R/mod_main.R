@@ -161,18 +161,17 @@ mod_main_server <- function(id, r){
   moduleServer( id, function(input, output, session){
     ns <- session$ns
     
-    # observeEvent(input$p_HS1_v1, {
-    #   print("go")
-    #   addTooltip(
-    #     id = "go_button_div",
-    #     options = list(
-    #       title = "Please insert API key",
-    #       placement = "auto"
-    #     ),
-    #     session = session
-    #   )
-    # })
+    ## show the api connect modal the first time 'The model' tab is opened
+    first_time_only = observeEvent(r$sidebar, {
+      req(r$sidebar)
+      
+      if(r$sidebar == "main_model") {
+        shinyjs::click("api_connect_button")
+        first_time_only$destroy()
+      }
+    })
     
+    ## the status of the api connection
     output$api_status = renderUI({
       api = r$api_connected
       color = ifelse(api == TRUE, "var(--vibrant-green)", "var(--primary-green)")
