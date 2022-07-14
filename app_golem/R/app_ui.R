@@ -187,7 +187,8 @@ app_ui <- function(request) {
         right = tagList(
           "By ",
           tags$a("Robert", href = "https://www.linkedin.com/in/robert-smith-53b28438/", target = "_blank"), ", ",
-          tags$a("Paul", href = "https://www.linkedin.com/in/paul-schneider-204345131/", target = "_blank"),
+          tags$a("Paul", href = "https://www.linkedin.com/in/paul-schneider-204345131/", target = "_blank"), ", ",
+          tags$a("Wael", href = "https://www.linkedin.com/in/wael-mohammed/", target = "_blank"),
           "& ", tags$a("Zauad", href = "https://bd.linkedin.com/in/zauad-shahreer", target = "_blank")
         )
       )
