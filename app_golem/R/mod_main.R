@@ -192,7 +192,11 @@ mod_main_server <- function(id, r){
             size = 'm',
             title = "Connect to API",
             easyClose = FALSE,
-            footer = NULL,
+            footer = div(
+              style = "color: var(--secondary-grey); font-size: .9rem;",
+              "Contact ", tags$a("Robert", href = "mailto:rsmith@darkpeakanalytics.com"),
+              " for help"
+            ),
             fade = TRUE,
             
             passwordInput(ns("api_key"), "Please insert the API key", width = "100%"),
