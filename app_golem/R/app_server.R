@@ -10,6 +10,8 @@ app_server <- function(input, output, session) {
   
   Sys.sleep(1)
   
+  httr::set_config(httr::config(ssl_verifypeer = 0L))
+  
   r = reactiveValues(
     api_connected = FALSE,
     api_key = NULL,
