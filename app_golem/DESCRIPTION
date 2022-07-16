@@ -17,6 +17,8 @@ Imports:
     knitr,
     magrittr,
     markdown,
+    progress,
+    readr,
     reshape2,
     shiny (>= 1.7.1),
     shinyFeedback,
