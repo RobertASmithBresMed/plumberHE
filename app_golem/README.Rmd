@@ -1,0 +1,29 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+
+# LivingHTA-Demo
+
+## Running the app  
+
+1. Open RStudio > File > New_Project > Version Control > Git  
+2. Paste this link in the dialog box  
+https://github.com/shahreyar-abeer/plumberHE/tree/main/app_golem  
+
+3. From inside the project, run `renv:restore()` in the console. This should install all the required packages.  
+4. Next navigate to `dev/run_dev.R`  
+5. Select everything in the script and run `(Ctrl + Enter)`  
+6. The app should be up and running!  
+
+Let me know if you face any issues.
