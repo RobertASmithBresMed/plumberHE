@@ -1,0 +1,96 @@
+ 
+:root {
+  --primary-green: #7D8C8F;
+  --secondary-grey: #939393;
+  --vibrant-green: #18bc9c;
+}
+
+/* to change the labels of all the pickers */
+.shiny-input-container > .control-label {
+  color : var(--secondary-grey);
+  font-weight: 400 !important;
+  font-size: .9rem;
+}
+
+.navbar {
+  padding: 0 !important;
+}
+
+.nav-tabs .nav-link {
+  color: var(--primary-green);
+}
+
+.tippy-content {
+  padding: .55rem;
+}
+
+
+.main-go_button_div .btn[disabled] {
+  /* don't let button block mouse events from reaching wrapper */
+  pointer-events: none;
+}
+
+/*sidebar footer styles*/
+.sidebar-custom {
+  padding: 0 !important;
+  border-top: none !important;
+}
+
+.dropdown-toggle::after {
+  display: none !important;
+}
+
+/* landing page styles */
+
+.waiter-overlay {
+  background-color: #011428;
+}
+
+.landing {
+  width: 85%;
+}
+
+.intro-title {
+  color: white;
+  width: 80%;
+  line-height: 1.1;
+}
+
+.intro-subtitle {
+  color: white;
+  width: 75%;
+  margin-bottom: 100px;
+  font-weight: 300;
+}
+
+
+.logos {
+  width: 80%;
+}
+
+.cell {
+  display: flex;
+  margin: 5px;
+}
+
+
+.cell .image {
+  width: 100%;
+}
+
+
+.progress {
+  background-color: transparent;
+  position: fixed;
+  bottom:0;
+  left:0;
+  right:0;
+  align-self: end;
+  border-radius: 0;
+  height: 30px;
+}
+
+.progress-bar {
+  background-color: white ;
+  color: var(--primary_col);
+}
