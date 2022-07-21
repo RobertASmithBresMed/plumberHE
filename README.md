@@ -1,7 +1,11 @@
 [![DOI](https://zenodo.org/badge/481174680.svg)](https://zenodo.org/badge/latestdoi/481174680)
 [![MIT Licence](https://badges.frapsoft.com/os/mit/mit.png?v=103)](https://opensource.org/licenses/mit-license.php)
 
-This repository was created for the [R-HTA](https://r-hta.org/) workshop, held in Oxford on Thursday 19th May 2022. 
+This repository was originally created for the [R-HTA](https://r-hta.org/) workshop, held in Oxford on Thursday 19th May 2022.
+
+An academic paper has been submitted to Wellcome Open Research, the pre-print under review can be found [here](https://wellcomeopenresearch.org/articles/7-194/v1#ref-6). Please reference as:
+
+>Smith RA, Schneider PP and Mohammed W. Living HTA: Automating Health Technology Assessment with R [version 1; peer review: awaiting peer review]. Wellcome Open Res 2022, 7:194 (https://doi.org/10.12688/wellcomeopenres.17933.1)
 
 # **Automating a living health economic evaluation with GitHub Actions & Plumber APIs**
 
