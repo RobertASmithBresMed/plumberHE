@@ -1,0 +1,30 @@
+# Get the docker image provided by plumber developers:
+FROM rstudio/plumber
+# Install pandoc:
+RUN apt-get update && apt-get install -y pandoc pandoc-citeproc libxt6
+# Install R packages requireed by the API:
+RUN R -e "install.packages('pacman')"
+RUN R -e "pacman::p_load('assertthat', 'dampack', 'ggplot2', 'httr', 'jsonlite', 'readr', 'rmarkdown')"
+# Create a working directory in the container:
+WORKDIR /api
+# Copy API files to the created working directory in the container:
+COPY ./darthAPI/ /api
+# Specify the commands to run once the container runs: 
+CMD ["/api/plumber.R"]
+
+######################################################
+########### To build/composed the container ##########
+######################################################
+# docker build -t living_he -f docker/Dockerfile .
+
+######################################################
+####### To test the created/composed container #######
+######################################################
+## Run the container: [--rm: clean up after exit]
+# docker run --rm living_he
+## Run the container and the API: [-p: expose port (source 8001):(container 8000)]
+# docker run --rm -p 8001:8000 living_he
+## API start automatically when your container is booted: [--restart]
+# docker run -p 8000:8000 -dit --restart=unless-stopped living_he
+## To stop the docker started using the previous command: [replace <ref> with the container id which is printed once the container was initialised]
+# docker stop <ref>
