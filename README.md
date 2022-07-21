@@ -7,7 +7,7 @@ An academic paper has been submitted to Wellcome Open Research, the pre-print un
 
 >Smith RA, Schneider PP and Mohammed W. Living HTA: Automating Health Technology Assessment with R [version 1; peer review: awaiting peer review]. Wellcome Open Res 2022, 7:194 (https://doi.org/10.12688/wellcomeopenres.17933.1)
 
-# **Automating a living health economic evaluation with GitHub Actions & Plumber APIs**
+# **Living HTA: Automating Health Technology Assessment with R**
 
 Robert Smith<sup>1,2,3</sup>, Paul Schneider<sup>1,3</sup> & Wael Mohammed<sup>1,3</sup>
 
@@ -17,22 +17,19 @@ Robert Smith<sup>1,2,3</sup>, Paul Schneider<sup>1,3</sup> & Wael Mohammed<sup>1
 
 >#### **Background**
 >
->The process of updating economic models is time-consuming and expensive, and often involves the transfer of sensitive data between parties. Here, we demonstrate how HEOR can be conducted in a way that allows clients to retain full control of their data, while automating reporting as new information becomes available.
+>Requiring access to sensitive data can be a significant obstacle for the development of health models in the Health Economics & Outcomes Research (HEOR) setting. We demonstrate how health economic evaluation can be conducted with minimal transfer of data between parties, while automating reporting as new information becomes available.
 >
 >#### **Methods**
 >
->We developed an automated analysis and reporting pipeline for health economic modelling and made the source code openly available on a GitHub repository. It consists of three parts:
-> -	An economic model is constructed by the consultant using pseudo data (i.e. random data, which has the same format as the real data).
-> -	On the company side, an application programming interface (API), generated using the R package plumber, is hosted on a server. An automated workflow is created. This workflow sends the economic model to the company API. The model is then run within the company server. The results are sent back to the consultant, and a (PDF) report is automatically generated using RMarkdown.
-> - This API hosts all sensitive data, so that data does not have to be provided to the consultant.
+>We developed an automated analysis and reporting pipeline for health economic modelling and made the source code openly available on a GitHub repository. The pipeline consists of three parts: An economic model is constructed by the consultant using pseudo data. On the data-owner side, an application programming interface (API) is hosted on a server. This API hosts all sensitive data, so that data does not have to be provided to the consultant. An automated workflow is created, which calls the API, retrieves results, and generates a report.
 >
 >#### **Results & Discussion**
 >
->The method is relatively complex, and requires a strong understanding of R, APIs, RMarkdown and GitHub Actions. However, the end result is a process, which allows the consultant to conduct health economic (or any other) analyses on company data, without having direct access – the company does not need to share their sensitive data. The workflow can be scheduled to run at defined time points (e.g. monthly), or when triggered by an event (e.g. an update to the underlying data or model code). Results are generated automatically and wrapped into a full report. Documents no longer need to be revised manually.
+>The application of modern data science tools and practices allows analyses of data without the need for direct access – negating the need to send sensitive data. In addition, the entire workflow can be largely automated: the analysis can be scheduled to run at defined time points (e.g. monthly), or when triggered by an event (e.g. an update to the underlying data or model code); results can be generated automatically and then be exported into a report. Documents no longer need to be revised manually.
 >
 >#### **Conclusions**
 >
->This example demonstrates that it is possible, within a HEOR setting, to separate the health economic model from the data, and automate the main steps of the analysis pipeline. We believe this is the first application of this procedure for a HEOR project.
+>This example demonstrates that it is possible, within a HEOR setting, to separate the health economic model from the data, and automate the main steps of the analysis pipeline.
 
 
 ## Diagram
